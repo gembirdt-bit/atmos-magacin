@@ -43,4 +43,4 @@ U **Podešavanja → Google Drive → Poveži Google Drive** prijavi se svojim G
 
 vasserviserbgd@gmail.com · [Politika privatnosti](privatnost.html) · [Uslovi korišćenja](uslovi.html)
 
-Autor: Željko Ilić · Gemb-Bit, Beograd
+Autor: zeljkoracunariborca
