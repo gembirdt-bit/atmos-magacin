@@ -1,4 +1,4 @@
-const CACHE = 'atmos-magacin-v1';
+const CACHE = 'atmos-magacin-v2';
 const ASSETS = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -60,4 +60,18 @@ self.addEventListener('notificationclick', e => {
       return self.clients.openWindow('./index.html');
     })
   );
+});
+
+/* dnevno obaveštenje i kad aplikacija nije otvorena (Android, instalirana aplikacija) */
+function idbAlerts(){return new Promise(res=>{try{const r=indexedDB.open('atmosMagDB',1);
+  r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('att'))d.createObjectStore('att');if(!d.objectStoreNames.contains('kv'))d.createObjectStore('kv')};
+  r.onsuccess=()=>{const d=r.result;const t=d.transaction('kv','readonly').objectStore('kv').get('alerts');t.onsuccess=()=>res({d,v:t.result||null});t.onerror=()=>res({d,v:null})};r.onerror=()=>res({})}catch(e){res({})}})}
+function today(){const n=new Date();return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0')}
+self.addEventListener('periodicsync',e=>{
+  if(e.tag!=='atmos-mag-daily')return;
+  e.waitUntil(idbAlerts().then(({d,v})=>{
+    if(!d||!v||!v.enabled||!v.n||v.notified===today())return;
+    v.notified=today();d.transaction('kv','readwrite').objectStore('kv').put(v,'alerts');
+    return self.registration.showNotification('Atmos Magacin — '+v.n+(v.n===1?' stvar za proveru':' stvari za proveru'),{body:(v.items||[]).slice(0,4).join('\n'),icon:'icon-192.png',badge:'icon-192.png',tag:'atmos-mag'});
+  }));
 });

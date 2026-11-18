@@ -16,6 +16,15 @@
 - **Više stvari odjednom** — „3x baterije AA“, „2 kom sijalice“…
 - **Pozajmljeno** 🤝 — kome je i kada pozajmljena stvar
 - **Magacin** — ulaz / izlaz robe, minimalna količina sa upozorenjem, cena i vrednost robe
+- **Inventura (popis)** 📋 — lokacija po lokaciju, skeniranjem QR nalepnica; na kraju izveštaj šta nedostaje, šta je na drugom mestu i razlike u količini, uz automatsku ispravku
+- **Obaveštenja** 🔔 — rok trajanja, garancija, dugo pozajmljeno, malo na stanju (jednom dnevno)
+- **Nabavka** 🛒 — spisak za kupovinu sa stvarima ispod minimuma; slanje preko Vibera, WhatsApp-a…; „Kupljeno“ dodaje na stanje
+- **Sezonska zamena** 🔄 — zimsko / letnje / praznično premesti odjednom
+- **Prijemnice i otpremnice** 📥📤 — sa brojem, dobavljačem / kupcem, cenama, štampom ili PDF-om i stornom
+- **Promet** 📊 — ulaz i izlaz po periodima, najprometniji artikli, roba bez prometa
+- **Nalepnice za stvari** — QR kod na samoj stvari otvara njeno stanje i lokaciju
+- **Garancije i računi** 🧾 — datum kupovine, garancija do, slike računa, garantnog lista i uputstva (i PDF) uz stvar
+- **Deljenje** 👀 — više uređaja preko istog Google naloga, uređaj „samo za pregled“ zaključan PIN-om, katalog stvari kao fajl za slanje
 - **Google Drive sinhronizacija** ☁️ — isti podaci na svim tvojim uređajima
 - **Rezervna kopija** — jednim dugmetom; automatske dnevne kopije na uređaju; izvoz za Excel (CSV) i spisak za štampu
 - **Izgled** — tamna, svetla ili automatska tema, boja akcenta, veličina teksta
