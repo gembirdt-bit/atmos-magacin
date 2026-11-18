@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<title>Atmos Magacin — Šta se gde nalazi</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c1512">
+<meta name="description" content="Evidencija stvari u kući, garaži, vikendici i magacinu: šta se gde nalazi, lokacije, nalepnice sa QR kodom">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{--acc:#0f9d78;--bg:#0c1512;--bg2:#111e1a;--card:#16251f;--card2:#1d3029;--line:rgba(255,255,255,.1);--txt:#eef7f3;--muted:#98b3a8;--ok:#34d399;--warn:#fbbf24;--bad:#f87171;--r:16px;--nav:64px}
+:root[data-theme=light]{--bg:#f1f6f3;--bg2:#e7efea;--card:#fff;--card2:#f1f6f3;--line:rgba(10,50,35,.12);--txt:#12231c;--muted:#58706a;--ok:#059669;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding-bottom:calc(var(--nav) + 90px + env(safe-area-inset-bottom))}
+body.fs-l{font-size:112%}body.fs-s{font-size:92%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:var(--card2);border-radius:12px;padding:10px 14px;font-size:.9rem}
+button:active{transform:scale(.98)}
+button:disabled{opacity:.5}
+.btn-p{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.btn-d{background:rgba(248,113,113,.15);color:var(--bad);border-color:rgba(248,113,113,.4)}
+.btn-s{padding:6px 10px;font-size:.8rem;border-radius:10px}
+.fld{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:1rem}
+.fld:focus{outline:2px solid var(--acc);outline-offset:-1px}
+textarea.fld{min-height:80px;resize:vertical}
+select.fld option{color:#000}
+label.l{display:block;font-size:.72rem;color:var(--muted);margin:10px 0 4px 2px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(8px + env(safe-area-inset-top)) 12px 8px}
+.top-in{max-width:1100px;margin:auto;display:flex;gap:8px;align-items:center}
+.logo{font-weight:800;letter-spacing:.5px;font-size:1rem;white-space:nowrap}.logo b{color:var(--acc)}
+.top select{flex:1;min-width:0;padding:8px 10px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.top button{padding:8px 11px}
+.shell{max-width:1100px;margin:auto;padding:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.card h3{margin:0 0 10px;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hero{background:linear-gradient(135deg,var(--acc),#0a3d30);color:#fff;border:0}
+.hero .n{font-size:.95rem;opacity:.9}.hero .big{font-size:1.5rem;font-weight:800;margin:2px 0 10px}
+.srch{display:flex;gap:6px;background:rgba(255,255,255,.15);border-radius:14px;padding:4px}
+.srch input{flex:1;min-width:0;border:0;background:none;color:#fff;padding:10px;font-size:1.05rem;outline:none}
+.srch input::placeholder{color:rgba(255,255,255,.75)}
+.srch button{background:rgba(255,255,255,.18);border:0;color:#fff;padding:8px 12px}
+.srch.lt{background:var(--card2)}.srch.lt input{color:var(--txt)}.srch.lt input::placeholder{color:var(--muted)}.srch.lt button{background:var(--card);color:var(--txt)}
+.grid{display:grid;gap:10px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.stat small{color:var(--muted);font-size:.72rem;display:block}.stat b{font-size:1.1rem;display:block;margin-top:2px}
+.row{display:flex;gap:10px;align-items:center}.sp{justify-content:space-between}.wrap{flex-wrap:wrap}.grow{flex:1;min-width:0}
+.muted{color:var(--muted)}.small{font-size:.8rem}
+.item{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:8px;cursor:pointer;width:100%;text-align:left;font-size:1rem}
+.item .ic{font-size:1.4rem;width:34px;text-align:center;flex:none}
+.item .th{width:46px;height:46px;border-radius:10px;object-fit:cover;flex:none;background:var(--card2)}
+.item .t{font-weight:600;word-break:break-word}
+.item .pth{font-size:.78rem;color:var(--muted);margin-top:2px;word-break:break-word}
+.item .q{font-weight:700;white-space:nowrap;text-align:right}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:.7rem;font-weight:700;white-space:nowrap;margin:2px 4px 0 0}
+.b-ok{background:rgba(52,211,153,.18);color:var(--ok)}.b-warn{background:rgba(251,191,36,.2);color:var(--warn)}.b-bad{background:rgba(248,113,113,.2);color:var(--bad)}.b-n{background:var(--card2);color:var(--muted)}
+.alert{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;margin-bottom:8px;font-size:.9rem;cursor:pointer}
+.alert.bad{background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4)}.alert.warn{background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.4)}.alert.n{background:var(--card2);border:1px solid var(--line)}
+.empty{text-align:center;color:var(--muted);padding:26px 10px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px;scrollbar-width:none}
+.chips button{white-space:nowrap;padding:6px 12px;font-size:.8rem;border-radius:999px;flex:none}
+.chips button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.crumb{display:flex;flex-wrap:wrap;gap:4px;align-items:center;font-size:.85rem;margin-bottom:10px}
+.crumb button{padding:4px 9px;font-size:.8rem;border-radius:9px}
+.crumb span{color:var(--muted)}
+.dotc{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-right:4px;border:1px solid rgba(128,128,128,.6)}
+.tree{margin:0;padding:0;list-style:none}
+.tree .tree{margin-left:18px;border-left:1px dashed var(--line);padding-left:6px}
+.node{display:flex;align-items:center;gap:8px;padding:8px 6px;border-radius:10px;cursor:pointer}
+.node:hover{background:var(--card2)}
+.node .nm{flex:1;min-width:0;word-break:break-word}
+.node .cnt{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.tg{width:22px;text-align:center;color:var(--muted);flex:none;border:0;background:none;padding:0;font-size:.8rem}
+.cells{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:4px}
+.cell{padding:6px 0;font-size:.68rem;border-radius:7px;text-align:center;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.cell.full{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+.cell.low{background:rgba(251,191,36,.25);border-color:var(--warn);color:var(--warn);font-weight:700}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--bg2);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;border:0;background:none;border-radius:0;padding:8px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.66rem;color:var(--muted);height:var(--nav)}
+nav button span{font-size:1.3rem}nav button.on{color:var(--acc);font-weight:700}
+.fab{position:fixed;right:16px;bottom:calc(var(--nav) + 16px + env(safe-area-inset-bottom));z-index:25;width:58px;height:58px;border-radius:50%;background:var(--acc);border:0;color:#fff;font-size:2rem;line-height:1;box-shadow:0 6px 20px rgba(0,0,0,.4);padding:0}
+dialog{border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--txt);width:min(560px,calc(100% - 20px));max-height:92vh;padding:0;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.dlg{padding:16px}.dlg h3{margin:0 0 6px}
+.dlg .foot{display:flex;gap:8px;margin-top:16px;position:sticky;bottom:-16px;background:var(--card);padding:10px 0 16px}
+.dlg .foot button{flex:1}
+.toast{position:fixed;left:50%;bottom:calc(var(--nav) + 90px);transform:translateX(-50%);background:#111c;backdrop-filter:blur(8px);color:#fff;padding:10px 16px;border-radius:12px;z-index:10001;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center}
+.toast.on{opacity:1}
+.sw{display:flex;gap:8px;flex-wrap:wrap}.sw button{width:34px;height:34px;border-radius:50%;padding:0;border:3px solid transparent}.sw button.on{border-color:var(--txt)}
+.seg{display:flex;background:var(--card2);border-radius:12px;padding:3px;gap:3px}.seg button{flex:1;border:0;background:none;padding:8px 4px;border-radius:9px;font-size:.85rem}.seg button.on{background:var(--acc);color:#fff;font-weight:600}
+.types{display:grid;gap:8px}.types button{display:flex;gap:12px;align-items:center;text-align:left;padding:14px;font-size:1rem}.types button.on{border-color:var(--acc);outline:2px solid var(--acc)}
+.types b{display:block}.types small{color:var(--muted);font-size:.78rem}
+.ph{width:100%;max-height:260px;object-fit:contain;border-radius:14px;background:var(--card2);margin-bottom:10px}
+.qty{display:flex;align-items:center;gap:8px}.qty b{font-size:1.6rem;min-width:60px;text-align:center}
+.hist{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding:6px 0}
+.pick{max-height:52vh;overflow:auto;margin-top:8px}
+.pick button{display:block;width:100%;text-align:left;margin-bottom:6px;padding:10px 12px}
+.pick button.on{border-color:var(--acc);outline:2px solid var(--acc)}
+.pick .pp{font-size:.75rem;color:var(--muted)}
+video.scan{width:100%;border-radius:14px;background:#000;max-height:60vh}
+.row.wrap>.grow{flex:1 1 140px}
+.bt{display:flex;flex-wrap:wrap;gap:6px}.bt>button{flex:1 1 140px}
+.more{display:grid;gap:10px}.more button{display:flex;align-items:center;gap:12px;padding:16px;text-align:left;font-size:1rem}
+footer{text-align:center;color:var(--muted);font-size:.75rem;padding:16px 16px 76px}
+nav .sec{display:none}
+#printArea{display:none}
+@media print{body.printing>*:not(#printArea){display:none!important}body.printing{padding:0!important;background:#fff}body.printing #printArea{display:block}}
+@media(max-width:560px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){
+ body{padding-bottom:30px;padding-left:200px}
+ nav{top:0;bottom:0;width:200px;right:auto;flex-direction:column;border-top:0;border-right:1px solid var(--line);padding:70px 8px 8px;overflow-y:auto;gap:2px}
+ nav button{flex:none;flex-direction:row;height:46px;font-size:.95rem;gap:12px;padding:0 14px;justify-content:flex-start;border-radius:12px}
+ .top{margin-left:-200px;padding-left:212px}
+ .fab{bottom:24px;right:24px}.toast{bottom:30px}
+ footer{padding-bottom:20px}
+}
+.coffee-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}.coffee-ov.open{display:flex}
+.coffee-box{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:18px;max-width:380px;width:100%;max-height:92vh;overflow:auto;padding:22px;text-align:center;font-size:.92rem;line-height:1.5;position:relative}
+.coffee-box h3{margin:0 0 10px;font-size:1.1rem;display:block}.coffee-box p{margin:8px 0}
+.coffee-acc{display:inline-block;margin:6px 0;padding:6px 12px;border-radius:10px;background:var(--card2);font-variant-numeric:tabular-nums;letter-spacing:.5px;user-select:all}
+.coffee-qr{width:200px;height:200px;margin:12px auto 4px;background:#fff;border-radius:10px;padding:6px}
+.coffee-x{position:absolute;top:6px;right:10px;width:auto;background:none;border:0;color:var(--txt);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 8px}
+.coffee-amts{display:flex;gap:6px;justify-content:center;margin-top:12px}.coffee-amts button{width:auto;padding:6px 12px;border-radius:10px;border:1px solid rgba(128,128,128,.45);background:rgba(128,128,128,.15);color:inherit;font:inherit;font-size:.85em;cursor:pointer}.coffee-amts button.on{background:var(--acc);border-color:var(--acc);color:#fff}.coffee-qrv svg{width:100%;height:100%;display:block}.coffee-qrv[hidden]{display:none}
+.coffee-mini{display:inline-block;width:auto;margin-top:8px;padding:5px 12px;font-size:.75rem;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);cursor:pointer}.clk{cursor:pointer}.clk:active{opacity:.85}
+</style>
+<!-- anonimni brojač poseta (GoatCounter, bez kolačića) -->
+<script data-goatcounter="https://atmos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="top"><div class="top-in">
+  <div class="logo">ATMOS<b>MAGACIN</b></div>
+  <select id="spaceSel" aria-label="Prostor"></select>
+  <button id="scanBtn" title="Skeniraj QR nalepnicu ili barkod" aria-label="Skeniraj">📷</button>
+</div></div>
+<main class="shell" id="view"></main>
+<footer>Atmos Magacin · Željko Ilić · Gemb-Bit<br><button class="coffee-mini" onclick="coffeeOpen()" type="button">☕ Doniraj autoru</button> <a class="coffee-mini" style="text-decoration:none" href="https://gembirdt-bit.github.io/atmosaplikacije/" target="_blank" rel="noopener">📱 Još Atmos aplikacija</a></footer>
+<button class="fab" id="fab" aria-label="Dodaj">+</button>
+<nav id="nav">
+  <button data-tab="pregled"><span>🏠</span>Pregled</button>
+  <button data-tab="stvari"><span>📦</span>Stvari</button>
+  <button data-tab="lokacije"><span>📍</span>Lokacije</button>
+  <button data-tab="podesavanja"><span>⚙️</span>Podešavanja</button>
+</nav>
+<dialog id="dlg"><form class="dlg" id="dlgForm" method="dialog"></form></dialog>
+<dialog id="pickDlg"><div class="dlg" id="pickBody"></div></dialog>
+<dialog id="scanDlg"><div class="dlg" id="scanBody"></div></dialog>
+<div class="toast" id="toast"></div>
+<input type="file" id="impFile" accept=".json,application/json,text/plain" hidden>
+<input type="file" id="photoFile" accept="image/*" capture="environment" hidden>
+
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const KEY='atmosMag1',SNAP='atmosMag1_snaps',PRE='atmosMag1_preupdate';
+const APP_VERSION='1.0.0';
+const BASE_URL=location.origin+location.pathname.replace(/index\.html$/,'');
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=v=>{const n=parseFloat(String(v??'').replace(',','.'));return isNaN(n)?0:n};
+const pad=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const todayStr=()=>ymd(new Date());
+const dayDiff=s=>Math.round((new Date(s+'T00:00:00')-new Date(todayStr()+'T00:00:00'))/864e5);
+const fmtDate=s=>{if(!s)return'—';const p=String(s).slice(0,10).split('-');return p.length===3?`${p[2]}.${p[1]}.${p[0]}.`:s};
+const fmtTime=t=>new Date(t).toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+const fmtQ=n=>{n=Math.round(num(n)*1000)/1000;return n.toLocaleString('sr-RS',{maximumFractionDigits:3})};
+const cmp=(a,b)=>String(a).localeCompare(String(b),'sr',{numeric:true,sensitivity:'base'});
+
+/* pretraga bez obzira na kvačice i pismo (ćirilica → latinica) */
+const CYR='абвгдђежзијклљмнњопрстћуфхцчџш',LAT=['a','b','v','g','d','dj','e','z','z','i','j','k','l','lj','m','n','nj','o','p','r','s','t','c','u','f','h','c','c','dz','s'];
+function fold(s){s=String(s??'').toLowerCase();let o='';for(const ch of s){const i=CYR.indexOf(ch);o+=i>=0?LAT[i]:ch}
+  return o.replace(/đ/g,'dj').normalize('NFD').replace(/[̀-ͯ]/g,'')}
+
+/* ---------- ŠIFARNICI ---------- */
+const TYPES={
+  kuca:{n:'Kuća / stan',ic:'🏠',d:'Sobe, ormari, police, fioke, kutije',
+    start:[['Dnevna soba','prostorija'],['Kuhinja','prostorija'],['Spavaća soba','prostorija'],['Dečja soba','prostorija'],['Kupatilo','prostorija'],['Hodnik','prostorija'],['Ostava','prostorija'],['Terasa','prostorija'],['Podrum','prostorija'],['Tavan','prostorija']]},
+  garaza:{n:'Garaža / radionica',ic:'🔧',d:'Zid sa alatom, radni sto, regali, kutije sa sitnim delovima',
+    start:[['Zid sa alatom','pano'],['Radni sto','sto'],['Regal','regal'],['Ormarić sa fiokama','ormar'],['Plafonska polica','polica'],['Kutije sa šrafovima i sitnim delovima','kutija'],['Gume i auto delovi','ugao'],['Bašta i dvorište','ugao']]},
+  vikendica:{n:'Vikendica / podrum / šupa',ic:'🏡',d:'Ostava, zimnica, zamrzivač, šupa',
+    start:[['Ostava','prostorija'],['Police sa zimnicom','polica'],['Zamrzivač','frizider'],['Šupa','prostorija'],['Podrum','prostorija']]},
+  magacin:{n:'Magacin',ic:'🏭',d:'Lokacije sa šiframa: A1–A999, B1–B999…',start:[]}
+};
+const KINDS=[['prostorija','Prostorija','🚪'],['ormar','Ormar','🗄️'],['polica','Polica','📚'],['fioka','Fioka','🗃️'],['kutija','Kutija','📦'],
+  ['kofer','Kofer za alat','🧰'],['torba','Torba / kesa','🛍️'],['pano','Zid / pano za alat','🔩'],['sto','Radni sto','🛠️'],['regal','Regal','🏗️'],
+  ['frizider','Frižider / zamrzivač','❄️'],['ugao','Ugao / prostor','📐'],['vozilo','Vozilo / gepek','🚗'],['zona','Zona / red','🏷️'],['pozicija','Pozicija','📍'],['paleta','Paleta','🟫'],['ostalo','Ostalo','📌']];
+const KI=Object.fromEntries(KINDS.map(k=>[k[0],k[2]])),KN=Object.fromEntries(KINDS.map(k=>[k[0],k[1]]));
+const COLORS=[['','bez boje'],['#3b82f6','plava'],['#ef4444','crvena'],['#22c55e','zelena'],['#eab308','žuta'],['#f97316','narandžasta'],['#a855f7','ljubičasta'],['#ec4899','roze'],['#f8fafc','bela'],['#111827','crna'],['#9ca3af','siva'],['#92400e','braon'],['transparent','providna']];
+const colorName=c=>(COLORS.find(x=>x[0]===c)||['',''])[1];
+const CATS=[['Alat','🔨'],['Električni alat','🔌'],['Šrafovi i sitnež','🔩'],['Auto delovi i gume','🚗'],['Elektronika','💻'],['Kablovi i punjači','🔋'],['Dokumenta','📄'],
+  ['Odeća i obuća','👕'],['Sezonsko i praznično','🎄'],['Kuhinja','🍳'],['Hrana i zimnica','🥫'],['Lekovi','💊'],['Igračke','🧸'],['Sport i rekreacija','🚲'],
+  ['Bašta','🌱'],['Boje i hemija','🎨'],['Kućna hemija','🧴'],['Alat za baštu','🪴'],['Roba','📦'],['Rezervni delovi','⚙️'],['Ostalo','📌']];
+const CI=Object.fromEntries(CATS);
+const UNITS=['kom','par','pak','kutija','kg','g','l','m'];
+const ACCS=['#0f9d78','#0ea5e9','#f59e0b','#ef4444','#8b5cf6','#ec4899','#64748b'];
+
+/* ---------- PODACI ---------- */
+function fresh(){return{v:1,settings:{theme:'auto',accent:ACCS[0],fs:'m',space:'',backupDays:14,lastExport:'',snapKeep:5,lastUpdCheck:''},spaces:[],locs:[],items:[]}}
+function normDb(d){const f=fresh();d=d&&typeof d==='object'?d:f;d.settings=Object.assign(f.settings,d.settings||{});
+  d.spaces=Array.isArray(d.spaces)?d.spaces:[];d.locs=Array.isArray(d.locs)?d.locs:[];d.items=Array.isArray(d.items)?d.items:[];
+  d.items.forEach(i=>{if(!Array.isArray(i.hist))i.hist=[]});return d}
+function load(){try{const r=JSON.parse(localStorage.getItem(KEY));if(r&&r.spaces)return normDb(r)}catch{}return fresh()}
+let db=load();
+const S=()=>db.settings;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch{toast('⚠ Memorija je puna — obriši neke slike ili napravi rezervnu kopiju')}if(typeof gdSoon==='function')gdSoon()}
+const hasData=()=>db.items.length>0||db.locs.length>0;
+const countAll=d=>d.spaces.length+d.locs.length+d.items.length;
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2800)}
+function download(name,text,mime){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:mime}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}
+
+/* automatske kopije na uređaju (bez slika, da stanu) */
+const getSnaps=()=>{try{return JSON.parse(localStorage.getItem(SNAP))||[]}catch{return[]}};
+function slim(d){const c=JSON.parse(JSON.stringify(d));c.items.forEach(i=>{delete i.photo});return c}
+function takeSnap(reason,force){try{if(!hasData())return;const a=getSnaps(),day=todayStr();if(!force&&a.length&&a[0].day===day)return;
+  a.unshift({t:new Date().toISOString(),day,reason:reason||'automatski',data:JSON.stringify(slim(db))});
+  const keep=Math.max(1,Math.min(10,num(S().snapKeep)||5));while(a.length>keep)a.pop();
+  try{localStorage.setItem(SNAP,JSON.stringify(a))}catch{a.length=1;try{localStorage.setItem(SNAP,JSON.stringify(a))}catch{}}}catch{}}
+function restoreSnap(i){const s=getSnaps()[i];if(!s)return;
+  if(!confirm('Vratiti podatke iz kopije od '+fmtTime(s.t)+'?\nSlike se u automatskim kopijama ne čuvaju — postojeće slike ostaju gde se poklapaju.'))return;
+  const photos={};db.items.forEach(x=>{if(x.photo)photos[x.id]=x.photo});
+  takeSnap('pre vraćanja',true);const nd=normDb(JSON.parse(s.data));nd.items.forEach(x=>{if(photos[x.id])x.photo=photos[x.id]});
+  db=nd;save();go('pregled');toast('Podaci vraćeni ✔')}
+
+/* ---------- PROSTORI I LOKACIJE ---------- */
+const spaceById=id=>db.spaces.find(s=>s.id===id);
+function curSpace(){let s=spaceById(S().space);if(!s&&db.spaces.length){s=db.spaces[0];S().space=s.id}return s||null}
+const isMag=sp=>!!sp&&sp.type==='magacin';
+const locById=id=>db.locs.find(l=>l.id===id);
+const itemById=id=>db.items.find(i=>i.id===id);
+const locLabel=l=>!l?'—':l.kind==='zona'&&l.name?l.name:l.code?(l.name&&l.name!==l.code?l.code+' · '+l.name:l.code):(l.name||'Bez naziva');
+const locIc=l=>!l?'📍':KI[l.kind]||'📍';
+function kids(parent,spId){return db.locs.filter(l=>l.space===spId&&(l.parent||'')===(parent||'')).sort((a,b)=>cmp(locLabel(a),locLabel(b)))}
+function pathOf(id){const out=[];let l=locById(id),n=0;while(l&&n++<40){out.unshift(l);l=l.parent?locById(l.parent):null}return out}
+function pathText(id,withSpace){const p=pathOf(id).map(locLabel);const l=locById(id);
+  if(withSpace&&l){const s=spaceById(l.space);if(s)p.unshift(s.name)}return p.join(' › ')||'Bez lokacije'}
+function descIds(id){const out=new Set([id]);let grew=true;while(grew){grew=false;db.locs.forEach(l=>{if(l.parent&&out.has(l.parent)&&!out.has(l.id)){out.add(l.id);grew=true}})}return out}
+/* koliko stvari je u lokaciji (zajedno sa podlokacijama) */
+function countMap(spId){const c={};db.items.forEach(i=>{if(i.space!==spId||!i.loc)return;let l=locById(i.loc),n=0;while(l&&n++<40){c[l.id]=(c[l.id]||0)+1;l=l.parent?locById(l.parent):null}});return c}
+function addSpace(name,type){const sp={id:uid(),name:name||TYPES[type].n,type,created:Date.now()};db.spaces.push(sp);
+  (TYPES[type].start||[]).forEach(([n,k])=>db.locs.push({id:uid(),space:sp.id,parent:'',name:n,kind:k,color:'',code:'',note:'',created:Date.now()}));
+  S().space=sp.id;return sp}
+
+/* ---------- STATUS STVARI ---------- */
+function itemFlags(i){const f=[];
+  if(i.lent&&i.lent.to)f.push({lvl:'warn',t:'Pozajmljeno: '+i.lent.to});
+  if(i.exp){const d=dayDiff(i.exp);if(d<0)f.push({lvl:'bad',t:'Istekao rok'});else if(d<=30)f.push({lvl:'warn',t:'Ističe za '+d+' d'})}
+  if(num(i.min)>0&&num(i.qty)<=num(i.min))f.push({lvl:num(i.qty)<=0?'bad':'warn',t:num(i.qty)<=0?'Nema na stanju':'Malo na stanju'});
+  return f}
+function alerts(spId){const out=[];db.items.filter(i=>i.space===spId).forEach(i=>itemFlags(i).forEach(f=>out.push({lvl:f.lvl,i,t:f.t})));
+  const o={bad:0,warn:1};return out.sort((a,b)=>o[a.lvl]-o[b.lvl])}
+function addHist(i,a,txt){i.hist=i.hist||[];i.hist.unshift({t:Date.now(),a,txt});if(i.hist.length>30)i.hist.length=30;i.updated=Date.now()}
+
+/* ---------- PRETRAGA ---------- */
+function search(q,spId){const w=fold(q).split(/\s+/).filter(Boolean);if(!w.length)return{items:[],locs:[]};
+  const hay=i=>fold([i.name,i.note,i.tags,i.code,i.cat,i.lent&&i.lent.to,pathText(i.loc)].join(' '));
+  const items=db.items.filter(i=>(!spId||i.space===spId)).map(i=>{const h=hay(i),n=fold(i.name);if(!w.every(x=>h.includes(x)))return null;
+      let sc=0;w.forEach(x=>{if(n.startsWith(x))sc+=3;else if(n.includes(x))sc+=2;else sc+=1});return{i,sc}}).filter(Boolean)
+    .sort((a,b)=>b.sc-a.sc||cmp(a.i.name,b.i.name)).map(x=>x.i);
+  const locs=db.locs.filter(l=>(!spId||l.space===spId)&&w.every(x=>fold(locLabel(l)+' '+(l.note||'')+' '+colorName(l.color)+' '+KN[l.kind]).includes(x))).slice(0,30);
+  return{items,locs}}
+
+/* ---------- TEMA ---------- */
+function applyTheme(){const s=S();let t=s.theme;if(t==='auto')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  document.documentElement.dataset.theme=t;document.documentElement.style.setProperty('--acc',s.accent);
+  document.body.className=s.fs==='l'?'fs-l':s.fs==='s'?'fs-s':'';
+  document.querySelector('meta[name=theme-color]').content=t==='light'?'#f1f6f3':'#0c1512'}
+
+let ui={tab:'pregled',q:'',cat:'',loc:'',open:{},zone:'',sort:'name',allSp:false};
+function go(t,keep){ui.tab=t;if(!keep){ui.cat='';ui.loc=''}render();window.scrollTo(0,0)}
+</script>
+
+<script>
+/* ---------- ISCRTAVANJE ---------- */
+function render(){
+  applyTheme();
+  const sp=curSpace();
+  const sel=$('spaceSel');
+  sel.innerHTML=db.spaces.map(s=>`<option value="${s.id}" ${sp&&s.id===sp.id?'selected':''}>${TYPES[s.type]?TYPES[s.type].ic:'📍'} ${esc(s.name)}</option>`).join('')+'<option value="__new">➕ Novi prostor…</option>';
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===ui.tab));
+  $('fab').style.display=sp&&['pregled','stvari','lokacije'].includes(ui.tab)?'block':'none';
+  const v=$('view');
+  if(!sp){v.innerHTML=pgWelcome();return}
+  const pages={pregled:pgPregled,stvari:pgStvari,lokacije:pgLokacije,podesavanja:pgPodesavanja};
+  v.innerHTML=(pages[ui.tab]||pgPregled)(sp);
+  const q=$('q');if(q&&ui.focusQ){q.focus();q.setSelectionRange(q.value.length,q.value.length);ui.focusQ=false}
+}
+
+function pgWelcome(){
+  return`<div class="card hero"><div class="n">Dobro došli u</div><div class="big">Atmos Magacin 📦</div>
+    <div>Zapiši šta se gde nalazi — u kući, garaži, vikendici ili magacinu — i nađi bilo šta za par sekundi.</div></div>
+  <div class="card"><h3>Šta želiš da uređuješ?</h3>
+    <div class="types">${Object.entries(TYPES).map(([k,t])=>`<button data-act="newspace" data-type="${k}"><span style="font-size:1.8rem">${t.ic}</span><span><b>${t.n}</b><small>${t.d}</small></span></button>`).join('')}</div>
+    <div class="small muted" style="margin-top:10px">Kasnije možeš da dodaš još prostora (npr. kuća + garaža + vikendica) i da ih menjaš gore u traci.</div></div>
+  ${GD_CLIENT?`<div class="card"><h3>☁️ Već koristiš Atmos Magacin?</h3><div class="small muted" style="margin-bottom:10px">Poveži Google Drive i preuzmi podatke sa drugog uređaja.</div><button class="btn-p" data-act="gdconnect" style="width:100%">☁️ Poveži Google Drive</button></div>`:''}
+  <div class="card"><button data-act="import" style="width:100%">📂 Vrati podatke iz rezervne kopije</button></div>`;
+}
+
+function itemRow(i,showSpace,noPath){
+  const fl=itemFlags(i);
+  const pic=i.photo?`<img class="th" src="${i.photo}" alt="" loading="lazy">`:`<span class="ic">${CI[i.cat]||'📦'}</span>`;
+  return`<button class="item" data-act="oitem" data-id="${i.id}">${pic}<div class="grow"><div class="t">${esc(i.name)}</div>
+    ${noPath?'':`<div class="pth">📍 ${esc(pathText(i.loc,showSpace))}</div>`}${fl.length?`<div>${fl.map(f=>`<span class="badge b-${f.lvl}">${esc(f.t)}</span>`).join('')}</div>`:''}</div>
+    <div class="q">${fmtQ(i.qty)} <span class="small muted">${esc(i.unit||'kom')}</span></div></button>`;
+}
+function locRow(l,cnt,showSpace){
+  return`<button class="item" data-act="oloc" data-id="${l.id}"><span class="ic">${locIc(l)}</span><div class="grow"><div class="t">${l.color?`<i class="dotc" style="background:${l.color}"></i>`:''}${esc(locLabel(l))}</div>
+    <div class="pth">${esc(l.parent?pathText(l.parent,showSpace):(showSpace?(spaceById(l.space)||{}).name||'':KN[l.kind]||''))}</div></div>
+    ${cnt!=null?`<div class="q small muted">${cnt} stv.</div>`:''}</button>`;
+}
+
+function srchBox(ph,lt){
+  return`<div class="srch${lt?' lt':''}"><input id="q" type="search" placeholder="${ph||'Gde je…? (npr. bušilica, kablovi, zimska jakna)'}" value="${esc(ui.q)}" autocomplete="off" enterkeyhint="search">
+    ${('webkitSpeechRecognition' in window||'SpeechRecognition' in window)?'<button type="button" data-act="voice" title="Pretraga glasom">🎤</button>':''}
+    ${ui.q?'<button type="button" data-act="clearq" title="Obriši">✕</button>':''}</div>`;
+}
+
+function pgPregled(sp){
+  const mine=db.items.filter(i=>i.space===sp.id),locs=db.locs.filter(l=>l.space===sp.id);
+  let h=`<div class="card hero"><div class="n">${TYPES[sp.type].ic} ${esc(TYPES[sp.type].n)}</div><div class="big">${esc(sp.name)}</div>${srchBox()}
+    <div class="row small" style="margin-top:10px;gap:14px;opacity:.9"><span>📦 ${mine.length} stvari</span><span>📍 ${locs.length} lokacija</span>${db.spaces.length>1?`<label class="row" style="gap:5px"><input type="checkbox" data-act="allsp" ${ui.allSp?'checked':''}>traži u svim prostorima</label>`:''}</div></div>`;
+  if(ui.q){h+=searchResults(sp);return h}
+  h+=gdStrip();
+  if(backupDue())h+=`<div class="card" style="border-color:var(--warn)"><h3>💾 Vreme je za rezervnu kopiju</h3><div class="row wrap"><button class="btn-p grow" data-act="export">💾 Napravi rezervnu kopiju</button>${GD_CLIENT&&!gd.on?'<button class="grow" data-act="gdconnect">☁️ Google Drive</button>':''}</div></div>`;
+  if(!mine.length){
+    h+=`<div class="card"><h3>👋 Kako početi</h3><div class="small" style="line-height:1.7">
+      1. ${isMag(sp)?'Napravi lokacije sa šiframa (A1–A999…) u kartici <b>Lokacije</b>.':'U kartici <b>Lokacije</b> već su napravljene osnovne '+(sp.type==='garaza'?'celine garaže':'prostorije')+' — dodaj ormare, police, fioke i kutije.'}<br>
+      2. Pritisni <b>+</b> i upiši stvar i gde se nalazi.<br>
+      3. Odštampaj <b>nalepnice sa QR kodom</b> za kutije i police — kad skeniraš nalepnicu, odmah vidiš šta je unutra.</div>
+      <div class="row wrap" style="margin-top:12px">${isMag(sp)?'<button class="btn-p grow" data-act="gen">🏷️ Napravi lokacije A1–A999</button>':'<button class="btn-p grow" data-act="tab" data-to="lokacije">📍 Lokacije</button>'}<button class="grow" data-act="additem">➕ Prva stvar</button></div></div>`;
+    return h;
+  }
+  const al=alerts(sp.id);
+  if(al.length)h+=`<div class="card"><h3>⚠️ Zahteva pažnju <span class="small muted">${al.length}</span></h3>${al.slice(0,8).map(a=>`<div class="alert ${a.lvl}" data-act="oitem" data-id="${a.i.id}"><span>${CI[a.i.cat]||'📦'}</span><span class="grow"><b>${esc(a.i.name)}</b> — ${esc(a.t)}<div class="small muted">${esc(pathText(a.i.loc))}</div></span></div>`).join('')}</div>`;
+  const lent=mine.filter(i=>i.lent&&i.lent.to);
+  if(lent.length)h+=`<div class="card"><h3>🤝 Pozajmljeno</h3>${lent.map(i=>`<div class="alert n" data-act="oitem" data-id="${i.id}"><span>${CI[i.cat]||'📦'}</span><span class="grow"><b>${esc(i.name)}</b> → ${esc(i.lent.to)}<div class="small muted">od ${fmtDate(i.lent.date)}${i.lent.date?' · '+(-dayDiff(i.lent.date))+' dana':''}</div></span></div>`).join('')}</div>`;
+  const recent=mine.slice().sort((a,b)=>(b.updated||0)-(a.updated||0)).slice(0,6);
+  h+=`<div class="card"><h3>🕘 Nedavno menjano <button class="btn-s" data-act="tab" data-to="stvari">Sve stvari →</button></h3>${recent.map(i=>itemRow(i)).join('')}</div>`;
+  const cats={};mine.forEach(i=>{cats[i.cat||'Ostalo']=(cats[i.cat||'Ostalo']||0)+1});
+  h+=`<div class="card"><h3>🗂️ Po kategorijama</h3><div class="chips" style="flex-wrap:wrap">${Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<button data-act="catgo" data-cat="${esc(c)}">${CI[c]||'📌'} ${esc(c)} · ${n}</button>`).join('')}</div></div>`;
+  if(isMag(sp)){const val=mine.reduce((s,i)=>s+num(i.qty)*num(i.price),0);
+    if(val>0)h+=`<div class="grid g2"><div class="stat"><small>Vrednost robe</small><b>${val.toLocaleString('sr-RS',{maximumFractionDigits:0})} RSD</b></div><div class="stat"><small>Ukupno komada</small><b>${fmtQ(mine.reduce((s,i)=>s+num(i.qty),0))}</b></div></div>`}
+  h+=`<div class="row wrap" style="margin-top:4px"><button class="grow" data-act="labels">🏷️ Nalepnice sa QR kodom</button><button class="grow" data-act="printinv">🖨️ Spisak za štampu</button></div>`;
+  return h;
+}
+
+function searchResults(sp){
+  const r=search(ui.q,ui.allSp?null:sp.id),all=ui.allSp&&db.spaces.length>1;
+  let h='';
+  if(r.items.length)h+=`<div class="card"><h3>📦 Stvari <span class="small muted">${r.items.length}</span></h3>${r.items.slice(0,60).map(i=>itemRow(i,all)).join('')}</div>`;
+  if(r.locs.length)h+=`<div class="card"><h3>📍 Lokacije</h3>${r.locs.map(l=>locRow(l,null,all)).join('')}</div>`;
+  if(!h)h=`<div class="card empty">Ništa nije pronađeno za „${esc(ui.q)}“.<br><button class="btn-p" style="margin-top:12px" data-act="additem" data-name="${esc(ui.q)}">➕ Dodaj „${esc(ui.q)}“</button></div>`;
+  return h;
+}
+
+function pgStvari(sp){
+  let list=db.items.filter(i=>i.space===sp.id);
+  const cats=[...new Set(list.map(i=>i.cat||'Ostalo'))].sort(cmp);
+  if(ui.cat)list=list.filter(i=>(i.cat||'Ostalo')===ui.cat);
+  if(ui.q){const ids=new Set(search(ui.q,sp.id).items.map(i=>i.id));list=list.filter(i=>ids.has(i.id))}
+  const so=ui.sort;
+  list.sort(so==='new'?(a,b)=>(b.updated||0)-(a.updated||0):so==='loc'?(a,b)=>cmp(pathText(a.loc),pathText(b.loc))||cmp(a.name,b.name):so==='qty'?(a,b)=>num(a.qty)-num(b.qty):(a,b)=>cmp(a.name,b.name));
+  return`<div class="card" style="padding:10px">${srchBox('Traži stvari…',1)}</div>
+  <div class="chips"><button class="${!ui.cat?'on':''}" data-act="cat" data-cat="">Sve · ${db.items.filter(i=>i.space===sp.id).length}</button>${cats.map(c=>`<button class="${ui.cat===c?'on':''}" data-act="cat" data-cat="${esc(c)}">${CI[c]||'📌'} ${esc(c)}</button>`).join('')}</div>
+  <div class="row sp" style="margin:0 2px 8px"><span class="small muted">${list.length} stvari</span>
+    <select class="fld" style="width:auto;padding:6px 10px;font-size:.85rem" data-act="sort">${[['name','Po nazivu'],['new','Nedavno menjano'],['loc','Po lokaciji'],['qty','Po količini']].map(([k,n])=>`<option value="${k}" ${so===k?'selected':''}>${n}</option>`).join('')}</select></div>
+  ${list.length?list.map(i=>itemRow(i)).join(''):'<div class="empty">Nema stvari. Pritisni + da dodaš prvu.</div>'}`;
+}
+
+/* ---------- LOKACIJE ---------- */
+function pgLokacije(sp){
+  if(ui.loc&&locById(ui.loc))return pgLoc(sp,locById(ui.loc));
+  const cm=countMap(sp.id);
+  let h=`<div class="bt" style="margin-bottom:12px"><button class="btn-p" data-act="addloc">➕ Nova lokacija</button>${isMag(sp)?'<button data-act="gen">🏷️ Napravi šifre</button>':''}<button data-act="labels">🖨️ Nalepnice</button></div>`;
+  const roots=kids('',sp.id);
+  if(!roots.length)return h+`<div class="empty">Nema lokacija. ${isMag(sp)?'Napravi šifre lokacija (npr. A1–A999).':'Dodaj prvu prostoriju, ormar ili kutiju.'}</div>`;
+  if(isMag(sp)){
+    const zones=roots.filter(l=>kids(l.id,sp.id).length),free=roots.filter(l=>!kids(l.id,sp.id).length);
+    zones.forEach(z=>{const ch=kids(z.id,sp.id),full=ch.filter(c=>cm[c.id]).length,open=ui.zone===z.id;
+      h+=`<div class="card"><h3><span>${locIc(z)} ${esc(locLabel(z))}</span><span class="small muted">${full} / ${ch.length} zauzeto</span></h3>
+        <div class="cbar" style="height:8px;border-radius:6px;background:var(--card2);overflow:hidden;margin-bottom:10px"><i style="display:block;height:100%;width:${ch.length?full/ch.length*100:0}%;background:var(--acc)"></i></div>
+        <div class="row wrap"><button class="btn-s grow" data-act="zone" data-id="${z.id}">${open?'▲ Sakrij mapu':'▦ Prikaži mapu pozicija'}</button><button class="btn-s grow" data-act="oloc" data-id="${z.id}">📋 Detalji zone</button></div>
+        ${open&&ch.length>120?`<div class="chips" style="margin-top:10px">${Array.from({length:Math.ceil(ch.length/100)},(_,k)=>`<button class="${(ui.zpage||0)===k?'on':''}" data-act="zpage" data-i="${k}">${esc(locLabel(ch[k*100]))}–${esc(locLabel(ch[Math.min(ch.length,k*100+100)-1]))}</button>`).join('')}</div>`:''}
+        ${open?`<div class="cells" style="margin-top:10px">${(ch.length>120?ch.slice((ui.zpage||0)*100,(ui.zpage||0)*100+100):ch).map(c=>{const n=cm[c.id]||0,low=n&&db.items.some(i=>i.loc===c.id&&itemFlags(i).some(f=>f.t.includes('stanju')));
+          return`<button class="cell ${low?'low':n?'full':''}" data-act="oloc" data-id="${c.id}" title="${esc(locLabel(c))}${n?' · '+n+' stv.':''}">${esc(c.code?c.code.replace(z.code||'@@','').replace(/^[-\s]/,'')||c.code:c.name)}</button>`}).join('')}</div>
+          <div class="small muted" style="margin-top:8px">🟩 zauzeto · 🟨 malo na stanju · ⬜ prazno</div>`:''}</div>`});
+    if(free.length)h+=`<div class="card"><h3>📍 Ostale lokacije</h3>${free.map(l=>locRow(l,cm[l.id]||0)).join('')}</div>`;
+    return h;
+  }
+  const tree=(parent,depth)=>{const ch=kids(parent,sp.id);if(!ch.length)return'';
+    return`<ul class="tree">${ch.map(l=>{const sub=kids(l.id,sp.id).length,open=ui.open[l.id]||(depth===0&&ui.open[l.id]!==false&&false);
+      return`<li><div class="node" data-act="oloc" data-id="${l.id}">${sub?`<button class="tg" data-act="tg" data-id="${l.id}">${ui.open[l.id]?'▼':'▶'}</button>`:'<span class="tg">·</span>'}
+        <span>${locIc(l)}</span><span class="nm">${l.color?`<i class="dotc" style="background:${l.color}"></i>`:''}${esc(locLabel(l))}</span><span class="cnt">${cm[l.id]?cm[l.id]+' stv.':''}${sub?' · '+sub+' ▸':''}</span></div>
+        ${ui.open[l.id]?tree(l.id,depth+1):''}</li>`}).join('')}</ul>`};
+  h+=`<div class="card">${tree('',0)}<div class="row wrap" style="margin-top:10px"><button class="btn-s grow" data-act="expand">▼ Otvori sve</button><button class="btn-s grow" data-act="collapse">▶ Zatvori sve</button></div></div>`;
+  const none=db.items.filter(i=>i.space===sp.id&&!locById(i.loc));
+  if(none.length)h+=`<div class="card"><h3>❔ Bez lokacije</h3>${none.map(i=>itemRow(i)).join('')}</div>`;
+  return h;
+}
+
+function pgLoc(sp,l){
+  const path=pathOf(l.id),ch=kids(l.id,sp.id),cm=countMap(sp.id);
+  const here=db.items.filter(i=>i.loc===l.id).sort((a,b)=>cmp(a.name,b.name));
+  const deep=db.items.filter(i=>i.loc!==l.id&&path.length&&descIds(l.id).has(i.loc));
+  let h=`<div class="crumb"><button data-act="oloc" data-id="">${TYPES[sp.type].ic} ${esc(sp.name)}</button>${path.map((p,k)=>`<span>›</span>${k===path.length-1?`<b>${esc(locLabel(p))}</b>`:`<button data-act="oloc" data-id="${p.id}">${esc(locLabel(p))}</button>`}`).join('')}</div>
+  <div class="card"><div class="row" style="align-items:flex-start"><span style="font-size:2rem">${locIc(l)}</span><div class="grow">
+    <div style="font-size:1.2rem;font-weight:700">${l.color?`<i class="dotc" style="background:${l.color}"></i>`:''}${esc(locLabel(l))}</div>
+    <div class="small muted">${esc(KN[l.kind]||'')}${l.color?' · '+esc(colorName(l.color)):''} · ${cm[l.id]||0} stvari${ch.length?' · '+ch.length+' podlokacija':''}</div>
+    ${l.note?`<div class="small" style="margin-top:6px">📝 ${esc(l.note)}</div>`:''}</div></div>
+    <div class="row wrap" style="margin-top:12px;gap:6px">
+      <button class="btn-s btn-p" data-act="additem" data-loc="${l.id}">➕ Stvar ovde</button>
+      <button class="btn-s" data-act="bulk" data-loc="${l.id}">📝 Više stvari odjednom</button>
+      <button class="btn-s" data-act="addloc" data-parent="${l.id}">📂 Podlokacija</button>
+      <button class="btn-s" data-act="editloc" data-id="${l.id}">✏️ Izmeni</button>
+      <button class="btn-s" data-act="labels" data-loc="${l.id}">🏷️ Nalepnica</button>
+      ${here.length?`<button class="btn-s" data-act="moveall" data-id="${l.id}">📦➡️ Premesti sadržaj</button>`:''}
+      <button class="btn-s" data-act="shareloc" data-id="${l.id}">📤 Podeli spisak</button>
+      <button class="btn-s btn-d" data-act="delloc" data-id="${l.id}">🗑️</button></div></div>`;
+  if(ch.length)h+=`<div class="card"><h3>📂 Unutra</h3>${ch.map(c=>locRow(c,cm[c.id]||0)).join('')}</div>`;
+  h+=`<div class="card"><h3>📦 Stvari ovde <span class="small muted">${here.length}</span></h3>${here.length?here.map(i=>itemRow(i,false,true)).join(''):'<div class="empty" style="padding:12px">Ovde još nema stvari.</div>'}</div>`;
+  if(deep.length)h+=`<div class="card"><h3>📦 U podlokacijama <span class="small muted">${deep.length}</span></h3>${deep.map(i=>itemRow(i)).join('')}</div>`;
+  return h;
+}
+</script>
+
+<script>
+/* ---------- PODEŠAVANJA ---------- */
+function pgPodesavanja(sp){
+  const s=S(),cnt=id=>db.items.filter(i=>i.space===id).length;
+  const kb=Math.round(((localStorage.getItem(KEY)||'').length*2)/1024);
+  const snaps=getSnaps();
+  return`<div class="card"><h3>🏠 Prostori <button class="btn-s btn-p" data-act="newspacedlg">➕ Novi</button></h3>
+    ${db.spaces.map(x=>`<div class="item" style="cursor:default"><span class="ic">${TYPES[x.type].ic}</span><div class="grow"><div class="t">${esc(x.name)}</div><div class="pth">${esc(TYPES[x.type].n)} · ${cnt(x.id)} stvari · ${db.locs.filter(l=>l.space===x.id).length} lokacija</div></div>
+      <button class="btn-s" data-act="editspace" data-id="${x.id}">✏️</button><button class="btn-s btn-d" data-act="delspace" data-id="${x.id}">🗑️</button></div>`).join('')}</div>
+  <div class="card"><h3>🎨 Izgled</h3>
+    <label class="l">Tema</label><div class="seg">${[['auto','Automatski'],['dark','Tamna'],['light','Svetla']].map(([k,n])=>`<button data-set="theme" data-val="${k}" class="${s.theme===k?'on':''}">${n}</button>`).join('')}</div>
+    <label class="l">Boja</label><div class="sw">${ACCS.map(c=>`<button data-set="accent" data-val="${c}" class="${s.accent===c?'on':''}" style="background:${c}" aria-label="boja"></button>`).join('')}</div>
+    <label class="l">Veličina teksta</label><div class="seg">${[['s','Mala'],['m','Srednja'],['l','Velika']].map(([k,n])=>`<button data-set="fs" data-val="${k}" class="${s.fs===k?'on':''}">${n}</button>`).join('')}</div></div>
+  ${gdCard()}
+  <div class="card"><h3>💾 Rezervna kopija</h3>
+    <div class="small muted" style="margin-bottom:10px">Podaci su na ovom uređaju (${kb} KB)${gd.on?' i na tvom Google Drive-u':''}. Povremeno napravi rezervnu kopiju i sačuvaj je van telefona.${s.lastExport?' Poslednja: '+fmtDate(s.lastExport)+'.':''}</div>
+    <div class="grid g2"><button class="btn-p" data-act="export">💾 Napravi kopiju</button><button data-act="import">📂 Vrati iz kopije</button></div>
+    <div class="grid g2" style="margin-top:8px"><button class="btn-s" data-act="csv">📑 Izvoz za Excel (CSV)</button><button class="btn-s" data-act="printinv">🖨️ Spisak za štampu</button></div>
+    <label class="l">Podsetnik za rezervnu kopiju</label><select class="fld" data-act="bdays">${[[0,'Isključen'],[7,'Svakih 7 dana'],[14,'Svakih 14 dana'],[30,'Svakih 30 dana']].map(([v,n])=>`<option value="${v}" ${num(s.backupDays)===v?'selected':''}>${n}</option>`).join('')}</select>
+    ${snaps.length?`<details style="margin-top:12px"><summary class="small muted" style="cursor:pointer">Automatske kopije na uređaju (${snaps.length})</summary>${snaps.map((x,i)=>`<div class="row sp small" style="padding:6px 0;border-bottom:1px solid var(--line)"><span>${fmtTime(x.t)} · ${esc(x.reason)}</span><button class="btn-s" data-act="snap" data-i="${i}">Vrati</button></div>`).join('')}</details>`:''}
+    <details style="margin-top:10px"><summary class="small muted" style="cursor:pointer">Napredno</summary><button class="btn-d" data-act="reset" style="width:100%;margin-top:10px">⚠️ Obriši sve podatke</button></details></div>
+  <div class="card"><h3>ℹ️ Aplikacija</h3>
+    <div class="row sp small" style="margin-bottom:10px"><span class="muted">Verzija</span><b>${APP_VERSION}${ui.upd?' → dostupna '+esc(ui.upd):''}</b></div>
+    <button data-act="upd" style="width:100%">🔄 Proveri da li ima nove verzije</button>
+    <div class="small muted" style="margin-top:8px"><a href="privatnost.html" target="_blank" rel="noopener" style="color:inherit">Politika privatnosti</a> · <a href="uslovi.html" target="_blank" rel="noopener" style="color:inherit">Uslovi korišćenja</a></div></div>
+  <div class="card"><h3>☕ Podrži autora</h3>
+    <div class="small muted" style="margin-bottom:10px">Ako ti se aplikacija sviđa, možeš da častiš autora kafom.</div>
+    <button class="btn-p" style="width:100%" onclick="coffeeOpen()" type="button">☕ Plati mi kafu</button></div>
+  <div class="card"><h3>📱 Još Atmos aplikacija</h3>
+    <div class="small muted" style="margin-bottom:10px">Atmos Dom, Atmos Ishrana, Atmos Auto — servisna knjižica, Atmos Sentinel i ostale aplikacije.</div>
+    <button class="btn-p" style="width:100%" onclick="window.open('https://gembirdt-bit.github.io/atmosaplikacije/','_blank','noopener')" type="button">🌐 Otvori Atmos aplikacije</button></div>`;
+}
+function backupDue(){const n=num(S().backupDays);if(!n||!hasData())return false;if(gd.on&&gd.last&&Date.now()-gd.last<7*864e5)return false;let e=S().lastExport;if(!e){const t=Math.min(...db.items.map(i=>i.created||Date.now()));e=ymd(new Date(t))}return-dayDiff(e)>=n}
+
+/* ---------- DIJALOZI ---------- */
+const dlg=$('dlg'),dform=$('dlgForm');
+let dlgOk=null;
+function openForm(title,body,onOk,okText){
+  dlgOk=onOk;
+  dform.innerHTML=`<h3>${title}</h3>${body}<div class="foot"><button value="cancel" formnovalidate type="submit">${onOk?'Odustani':'Zatvori'}</button>${onOk?`<button value="ok" class="btn-p" type="submit">${okText||'Sačuvaj'}</button>`:''}</div>`;
+  if(!dlg.open)dlg.showModal();dlg.scrollTop=0;
+}
+dform.addEventListener('submit',e=>{
+  const v=e.submitter&&e.submitter.value;
+  if(v==='ok'&&dlgOk){e.preventDefault();const r=dlgOk(new FormData(dform));if(r!==false){dlg.close();dlgOk=null}}
+  else dlgOk=null;
+});
+const opts=(list,cur)=>list.map(([v,n])=>`<option value="${esc(v)}" ${String(v)===String(cur)?'selected':''}>${esc(n)}</option>`).join('');
+const fld=(lbl,html)=>`<div><label class="l">${lbl}</label>${html}</div>`;
+
+/* izbor lokacije */
+let pickCb=null,pickSel='';
+function openPicker(spId,cur,cb,exclude){
+  pickCb=cb;pickSel=cur||'';
+  const ex=exclude?descIds(exclude):new Set();
+  const all=db.locs.filter(l=>l.space===spId&&!ex.has(l.id)).map(l=>({l,p:pathText(l.id)})).sort((a,b)=>cmp(a.p,b.p));
+  const draw=q=>{const w=fold(q).split(/\s+/).filter(Boolean);
+    const list=all.filter(x=>w.every(t=>fold(x.p+' '+colorName(x.l.color)).includes(t))).slice(0,300);
+    $('pickList').innerHTML=`<button data-pick="" class="${!pickSel?'on':''}">❔ <b>Bez lokacije</b>${exclude!==undefined?' <span class="pp">(najviši nivo)</span>':''}</button>`+list.map(x=>`<button data-pick="${x.l.id}" class="${x.l.id===pickSel?'on':''}">${locIc(x.l)} <b>${x.l.color?`<i class="dotc" style="background:${x.l.color}"></i>`:''}${esc(locLabel(x.l))}</b>${x.l.parent?`<div class="pp">${esc(pathText(x.l.parent))}</div>`:''}</button>`).join('')+(list.length>=300?'<div class="small muted">Prikazano prvih 300 — kucaj da suziš izbor.</div>':'')};
+  $('pickBody').innerHTML=`<h3>📍 Izaberi lokaciju</h3><input class="fld" id="pickQ" type="search" placeholder="Traži lokaciju (npr. garaža, plava kutija, A12)…" autocomplete="off">
+    <div class="pick" id="pickList"></div>
+    <div class="row" style="margin-top:10px"><button class="grow" data-pick="__new">➕ Nova lokacija</button><button class="grow" data-pick="__close">Zatvori</button></div>`;
+  draw('');$('pickQ').oninput=e=>draw(e.target.value);
+  $('pickDlg').showModal();
+}
+$('pickBody').addEventListener('click',e=>{const b=e.target.closest('[data-pick]');if(!b)return;e.preventDefault();e.stopPropagation();const v=b.dataset.pick;
+  if(v==='__close'){$('pickDlg').close();return}
+  if(v==='__new'){const name=prompt('Naziv nove lokacije (npr. „Plava kutija“, „Treća fioka“):');if(!name)return;
+    const sp=curSpace(),par=pickSel&&locById(pickSel)?pickSel:'';
+    const l={id:uid(),space:sp.id,parent:par,name:name.trim(),kind:guessKind(name),color:guessColor(name),code:isMag(sp)?name.trim().toUpperCase():'',note:'',created:Date.now()};
+    if(isMag(sp))l.name=l.code;db.locs.push(l);save();$('pickDlg').close();if(pickCb)pickCb(l.id);toast('Lokacija napravljena'+(par?' u „'+locLabel(locById(par))+'“':''));return}
+  $('pickDlg').close();if(pickCb)pickCb(v)});
+
+/* iz naziva pogodi vrstu i boju („plava kutija“ → kutija, plava) */
+function guessKind(n){const f=fold(n);const map=[['fiok','fioka'],['kutij','kutija'],['kofer','kofer'],['polic','polica'],['ormar','ormar'],['komod','ormar'],['regal','regal'],['torb','torba'],['kes','torba'],['ranac','torba'],['soba','prostorija'],['kuhinj','prostorija'],['kupatil','prostorija'],['hodnik','prostorija'],['podrum','prostorija'],['tavan','prostorija'],['garaz','prostorija'],['ostav','prostorija'],['teras','prostorija'],['frizider','frizider'],['zamrzivac','frizider'],['sto','sto'],['pano','pano'],['zid','pano'],['auto','vozilo'],['gepek','vozilo'],['palet','paleta']];
+  for(const [k,v] of map)if(f.includes(k))return v;return'ostalo'}
+function guessColor(n){const f=fold(n);const map=[['plav','#3b82f6'],['crven','#ef4444'],['zelen','#22c55e'],['zut','#eab308'],['narandz','#f97316'],['ljubic','#a855f7'],['roze','#ec4899'],['bel','#f8fafc'],['crn','#111827'],['siv','#9ca3af'],['braon','#92400e'],['provid','transparent']];
+  for(const [k,v] of map)if(new RegExp('(^|\\s)'+k).test(f))return v;return''}
+
+/* ---------- STVAR: forma ---------- */
+let photoCb=null;
+function openItemForm(it,pre){
+  const sp=curSpace(),mag=isMag(sp);
+  const i=it||Object.assign({qty:1,unit:'kom',cat:'',loc:ui.loc&&locById(ui.loc)&&locById(ui.loc).space===sp.id?ui.loc:''},pre||{});
+  let photo=i.photo||'';
+  const body=`
+    ${fld('Naziv stvari *',`<input class="fld" name="name" required value="${esc(i.name||'')}" placeholder="npr. Bušilica, Zimske gume, Božićne lampice">`)}
+    <div class="grid g2">${fld('Količina',`<input class="fld" name="qty" inputmode="decimal" value="${esc(i.qty??1)}">`)}${fld('Jedinica',`<select class="fld" name="unit">${opts(UNITS.map(u=>[u,u]),i.unit||'kom')}</select>`)}</div>
+    ${fld('Gde se nalazi',`<input type="hidden" name="loc" id="fLoc" value="${esc(i.loc||'')}"><button type="button" class="fld" id="fLocBtn" style="text-align:left">📍 ${esc(i.loc?pathText(i.loc):'Izaberi lokaciju…')}</button>`)}
+    ${fld('Kategorija',`<select class="fld" name="cat"><option value="">— izaberi —</option>${opts(CATS.map(c=>[c[0],c[1]+' '+c[0]]),i.cat)}</select>`)}
+    ${fld('Slika',`<div id="fPh">${photo?`<img class="ph" src="${photo}" alt="">`:''}</div><div class="row"><button type="button" class="grow" id="fPhBtn">📷 ${photo?'Promeni sliku':'Dodaj sliku'}</button>${photo?'<button type="button" id="fPhDel">🗑️</button>':''}</div>`)}
+    ${fld(mag?'Šifra / barkod':'Barkod (opciono)',`<div class="row"><input class="fld grow" name="code" value="${esc(i.code||'')}" placeholder="${mag?'Šifra artikla ili EAN':'EAN sa pakovanja'}"><button type="button" id="fScan" title="Skeniraj">📷</button></div>`)}
+    ${mag?`<div class="grid g2">${fld('Minimalna količina',`<input class="fld" name="min" inputmode="decimal" value="${esc(i.min||'')}" placeholder="upozori ispod">`)}${fld('Cena po jedinici (RSD)',`<input class="fld" name="price" inputmode="decimal" value="${esc(i.price||'')}">`)}</div>`:''}
+    <details ${i.exp||i.tags||i.note||(!mag&&i.min)?'open':''} style="margin-top:10px"><summary class="small muted" style="cursor:pointer">Više detalja (napomena, oznake, rok trajanja${mag?'':', minimum'})</summary>
+      ${fld('Napomena',`<textarea class="fld" name="note" placeholder="npr. punjač je u istoj kutiji">${esc(i.note||'')}</textarea>`)}
+      ${fld('Oznake (za pretragu)',`<input class="fld" name="tags" value="${esc(i.tags||'')}" placeholder="npr. zima, Marko, kampovanje">`)}
+      ${fld('Rok trajanja / garancija do',`<input class="fld" type="date" name="exp" value="${esc(i.exp||'')}">`)}
+      ${mag?'':fld('Upozori kad ima manje od (npr. sijalice, baterije)',`<input class="fld" name="min" inputmode="decimal" value="${esc(i.min||'')}">`)}
+    </details>`;
+  openForm(it?'✏️ Izmeni stvar':'➕ Nova stvar',body,fd=>{
+    const name=String(fd.get('name')||'').trim();if(!name){toast('Upiši naziv');return false}
+    const x=it||{id:uid(),space:sp.id,created:Date.now(),hist:[]};
+    const oldLoc=x.loc;
+    Object.assign(x,{name,qty:num(fd.get('qty')),unit:fd.get('unit'),loc:fd.get('loc')||'',cat:fd.get('cat')||'',code:String(fd.get('code')||'').trim(),
+      note:String(fd.get('note')||'').trim(),tags:String(fd.get('tags')||'').trim(),exp:fd.get('exp')||'',min:fd.get('min')?num(fd.get('min')):'',price:fd.get('price')!=null&&fd.get('price')!==''?num(fd.get('price')):(x.price||''),photo});
+    if(!x.cat)x.cat=guessCat(name);
+    if(!it){addHist(x,'new','Dodato'+(x.loc?' u '+pathText(x.loc):''));db.items.push(x)}
+    else if(oldLoc!==x.loc)addHist(x,'move','Premešteno: '+pathText(oldLoc)+' → '+pathText(x.loc));
+    else x.updated=Date.now();
+    save();render();toast(it?'Sačuvano ✔':'Dodato ✔ — '+pathText(x.loc));
+    if(it)setTimeout(()=>openItem(x.id),50);
+  });
+  $('fLocBtn').onclick=()=>openPicker(sp.id,$('fLoc').value,id=>{$('fLoc').value=id;$('fLocBtn').textContent='📍 '+(id?pathText(id):'Bez lokacije')});
+  $('fScan').onclick=()=>openScan(code=>{dform.elements.code.value=code});
+  const phUi=()=>{$('fPh').innerHTML=photo?`<img class="ph" src="${photo}" alt="">`:'';$('fPhBtn').textContent=photo?'📷 Promeni sliku':'📷 Dodaj sliku'};
+  $('fPhBtn').onclick=()=>{photoCb=d=>{photo=d;phUi()};$('photoFile').value='';$('photoFile').click()};
+  if($('fPhDel'))$('fPhDel').onclick=()=>{photo='';phUi();$('fPhDel').remove()};
+}
+function guessCat(n){const f=fold(n);const map=[['busilic','Električni alat'],['brusilic','Električni alat'],['srafilic','Električni alat'],['testera','Alat'],['cekic','Alat'],['klest','Alat'],['kljuc','Alat'],['srafcig','Alat'],['sraf','Šrafovi i sitnež'],['ekser','Šrafovi i sitnež'],['tipl','Šrafovi i sitnež'],['gum','Auto delovi i gume'],['ulje','Auto delovi i gume'],['kabl','Kablovi i punjači'],['punjac','Kablovi i punjači'],['bater','Kablovi i punjači'],['laptop','Elektronika'],['telefon','Elektronika'],['ruter','Elektronika'],['pasos','Dokumenta'],['ugovor','Dokumenta'],['garancij','Dokumenta'],['jakn','Odeća i obuća'],['cipel','Odeća i obuća'],['patik','Odeća i obuća'],['jelk','Sezonsko i praznično'],['lampic','Sezonsko i praznično'],['ukras','Sezonsko i praznično'],['lonac','Kuhinja'],['serpa','Kuhinja'],['tegl','Hrana i zimnica'],['ajvar','Hrana i zimnica'],['zimnic','Hrana i zimnica'],['lek','Lekovi'],['tablet','Lekovi'],['igrack','Igračke'],['lego','Igračke'],['bicikl','Sport i rekreacija'],['lopta','Sport i rekreacija'],['sator','Sport i rekreacija'],['crev','Bašta'],['kosilic','Alat za baštu'],['motik','Alat za baštu'],['boj','Boje i hemija'],['lak','Boje i hemija'],['silikon','Boje i hemija'],['deterdz','Kućna hemija'],['sijalic','Elektronika']];
+  for(const [k,v] of map)if(f.includes(k))return v;return isMag(curSpace())?'Roba':'Ostalo'}
+
+$('photoFile').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f||!photoCb)return;
+  const img=new Image(),url=URL.createObjectURL(f);
+  img.onload=()=>{const M=420,k=Math.min(1,M/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);photoCb(c.toDataURL('image/jpeg',0.62))};
+  img.onerror=()=>toast('Slika nije učitana');img.src=url});
+
+/* ---------- STVAR: detalji ---------- */
+function openItem(id){
+  const i=itemById(id);if(!i)return;
+  const sp=spaceById(i.space)||curSpace(),mag=isMag(sp),fl=itemFlags(i);
+  const body=`${i.photo?`<img class="ph" src="${i.photo}" alt="">`:''}
+    <div class="small muted">${CI[i.cat]||'📦'} ${esc(i.cat||'Ostalo')}${i.code?' · '+esc(i.code):''}</div>
+    <div class="card" style="margin:10px 0;background:var(--card2)"><div class="small muted">📍 Nalazi se u</div>
+      <div style="font-weight:700;font-size:1.05rem;margin-top:2px">${esc(pathText(i.loc,db.spaces.length>1))}</div>
+      ${i.loc?`<button type="button" class="btn-s" style="margin-top:8px" data-act="gotoloc" data-id="${i.loc}">Otvori lokaciju →</button>`:''}</div>
+    <div class="qty"><button type="button" data-act="qty" data-id="${i.id}" data-d="-1">−</button><b>${fmtQ(i.qty)}</b><button type="button" data-act="qty" data-id="${i.id}" data-d="1">+</button><span class="muted">${esc(i.unit||'kom')}</span>
+      ${mag?`<button type="button" class="btn-s" data-act="inout" data-id="${i.id}" style="margin-left:auto">📥📤 Ulaz / izlaz</button>`:''}</div>
+    ${fl.length?`<div style="margin-top:8px">${fl.map(f=>`<span class="badge b-${f.lvl}">${esc(f.t)}</span>`).join('')}</div>`:''}
+    ${i.note?`<div style="margin-top:10px">📝 ${esc(i.note)}</div>`:''}
+    ${i.tags?`<div class="small muted" style="margin-top:6px">🏷️ ${esc(i.tags)}</div>`:''}
+    ${i.exp?`<div class="small" style="margin-top:6px">⏳ Rok: ${fmtDate(i.exp)}</div>`:''}
+    ${mag&&num(i.price)?`<div class="small" style="margin-top:6px">💰 ${num(i.price).toLocaleString('sr-RS')} RSD/${esc(i.unit||'kom')} · ukupno ${(num(i.price)*num(i.qty)).toLocaleString('sr-RS',{maximumFractionDigits:0})} RSD</div>`:''}
+    <div class="bt" style="margin-top:14px">
+      <button type="button" class="btn-p" data-act="move" data-id="${i.id}">📍 Premesti</button>
+      <button type="button" class="grow" data-act="edititem" data-id="${i.id}">✏️ Izmeni</button>
+      ${i.lent&&i.lent.to?`<button type="button" class="grow" data-act="ret" data-id="${i.id}">↩️ Vraćeno</button>`:`<button type="button" class="grow" data-act="lend" data-id="${i.id}">🤝 Pozajmi</button>`}
+      <button type="button" class="grow" data-act="shareitem" data-id="${i.id}">📤 Podeli</button>
+      <button type="button" class="grow" data-act="copyitem" data-id="${i.id}">⧉ Kopiraj</button>
+      <button type="button" class="btn-d" data-act="delitem" data-id="${i.id}">🗑️ Obriši</button></div>
+    ${i.lent&&i.lent.to?`<div class="alert warn" style="margin-top:10px;cursor:default">🤝 Pozajmljeno: <b>${esc(i.lent.to)}</b> od ${fmtDate(i.lent.date)}</div>`:''}
+    ${(i.hist||[]).length?`<details style="margin-top:12px"><summary class="small muted" style="cursor:pointer">Istorija (${i.hist.length})</summary>${i.hist.map(h=>`<div class="hist">${fmtTime(h.t)} — ${esc(h.txt)}</div>`).join('')}</details>`:''}`;
+  openForm(esc(i.name),body,null);
+}
+
+/* ---------- LOKACIJA: forma ---------- */
+function openLocForm(l,parent){
+  const sp=curSpace(),mag=isMag(sp);
+  const x=l||{parent:parent||'',kind:mag?'pozicija':(parent?'ostalo':'prostorija'),color:''};
+  let par=x.parent||'',color=x.color||'';
+  const body=`${mag?fld('Šifra lokacije',`<input class="fld" name="code" value="${esc(x.code||'')}" placeholder="npr. A12, B-003, R1-P2" style="text-transform:uppercase">`):''}
+    ${fld(mag?'Naziv (opciono)':'Naziv *',`<input class="fld" name="name" ${mag?'':'required'} value="${esc(x.name&&x.name!==x.code?x.name:'')}" placeholder="${mag?'npr. Regal sa kablovima':'npr. Plava kutija, Treća fioka, Polica kod TV-a'}">`)}
+    ${fld('Vrsta',`<select class="fld" name="kind">${opts(KINDS.map(k=>[k[0],k[2]+' '+k[1]]),x.kind)}</select>`)}
+    ${fld('Boja (za kutije, fascikle…)',`<div class="sw" id="fCol">${COLORS.map(([c,n])=>`<button type="button" data-c="${c}" title="${n}" class="${color===c?'on':''}" style="background:${c||'var(--card2)'};${c==='transparent'?'border:2px dashed var(--muted)':''}">${c?'':'∅'}</button>`).join('')}</div>`)}
+    ${fld('Nalazi se u',`<input type="hidden" name="parent" id="fPar" value="${esc(par)}"><button type="button" class="fld" id="fParBtn" style="text-align:left">📂 ${esc(par?pathText(par):'— najviši nivo —')}</button>`)}
+    ${fld('Napomena',`<input class="fld" name="note" value="${esc(x.note||'')}" placeholder="npr. ključ od ormara je na eksere iznad">`)}`;
+  openForm(l?'✏️ Izmeni lokaciju':'📍 Nova lokacija',body,fd=>{
+    const code=String(fd.get('code')||'').trim().toUpperCase(),name=String(fd.get('name')||'').trim();
+    if(mag?!(code||name):!name){toast(mag?'Upiši šifru ili naziv':'Upiši naziv');return false}
+    if(mag&&code&&db.locs.some(o=>o.space===sp.id&&o.code===code&&(!l||o.id!==l.id))){toast('Šifra '+code+' već postoji');return false}
+    const y=l||{id:uid(),space:sp.id,created:Date.now()};
+    let kind=fd.get('kind');if(!l&&kind==='ostalo'&&name)kind=guessKind(name);
+    Object.assign(y,{code:mag?code:(y.code||''),name:name||code,kind,color,parent:fd.get('parent')||'',note:String(fd.get('note')||'').trim()});
+    if(!l)db.locs.push(y);save();ui.loc=y.id;ui.tab='lokacije';if(y.parent)ui.open[y.parent]=true;render();toast('Sačuvano ✔');
+  });
+  $('fCol').onclick=e=>{const b=e.target.closest('[data-c]');if(!b)return;color=b.dataset.c;$('fCol').querySelectorAll('button').forEach(o=>o.classList.toggle('on',o===b))};
+  const nm=dform.elements.name;if(!l&&nm)nm.addEventListener('input',()=>{if(!color){const g=guessColor(nm.value);if(g){color=g;$('fCol').querySelectorAll('button').forEach(o=>o.classList.toggle('on',o.dataset.c===g))}}
+    const k=guessKind(nm.value);if(k!=='ostalo')dform.elements.kind.value=k});
+  $('fParBtn').onclick=()=>openPicker(sp.id,$('fPar').value,id=>{$('fPar').value=id;$('fParBtn').textContent='📂 '+(id?pathText(id):'— najviši nivo —')},l?l.id:null);
+}
+
+/* ---------- MAGACIN: generator šifara ---------- */
+function openGen(){
+  const sp=curSpace();
+  const body=`<div class="small muted">Napravi odjednom lokacije sa šiframa, npr. <b>A1–A999</b>, <b>B1–B999</b>… Svako slovo je jedna zona (regal, red), a brojevi su pozicije u njoj.</div>
+    <div class="grid g2">${fld('Zone od slova',`<input class="fld" name="z1" value="A" maxlength="1" style="text-transform:uppercase">`)}${fld('do slova',`<input class="fld" name="z2" value="C" maxlength="1" style="text-transform:uppercase">`)}</div>
+    <div class="grid g2">${fld('Pozicije od broja',`<input class="fld" name="n1" inputmode="numeric" value="1">`)}${fld('do broja',`<input class="fld" name="n2" inputmode="numeric" value="999">`)}</div>
+    ${fld('Izgled šifre',`<select class="fld" name="fmt">${opts([['A1','A1, A2 … A999'],['A001','A001, A002 … A999'],['A-1','A-1, A-2 … A-999'],['A-001','A-001 … A-999']],'A1')}</select>`)}
+    <div class="grid g2">${fld('Nivoi police (opciono) od',`<input class="fld" name="l1" inputmode="numeric" placeholder="npr. 1">`)}${fld('do',`<input class="fld" name="l2" inputmode="numeric" placeholder="npr. 4">`)}</div>
+    <div class="small muted">Sa nivoima šifra izgleda ovako: <b>A12-3</b> (zona A, pozicija 12, nivo 3).</div>
+    <div class="alert n" id="genPrev" style="margin-top:12px;cursor:default;display:block"></div>`;
+  openForm('🏷️ Napravi šifre lokacija',body,fd=>{const g=genPlan(fd);if(!g.n){toast('Proveri unos');return false}
+    if(g.n>20000){toast('Najviše 20.000 lokacija odjednom');return false}
+    let made=0;
+    g.zones.forEach(L=>{let z=db.locs.find(o=>o.space===sp.id&&!o.parent&&o.code===L);
+      if(!z){z={id:uid(),space:sp.id,parent:'',code:L,name:'Zona '+L,kind:'zona',color:'',note:'',created:Date.now()};db.locs.push(z)}
+      const have=new Set(db.locs.filter(o=>o.space===sp.id).map(o=>o.code));
+      g.codes(L).forEach(c=>{if(have.has(c))return;db.locs.push({id:uid(),space:sp.id,parent:z.id,code:c,name:c,kind:'pozicija',color:'',note:'',created:Date.now()});made++})});
+    save();ui.tab='lokacije';ui.loc='';render();toast('Napravljeno lokacija: '+made);
+  },'Napravi');
+  const upd=()=>{if(!$('genPrev'))return;const g=genPlan(new FormData(dform));$('genPrev').innerHTML=g.n?`Biće napravljeno <b>${g.n.toLocaleString('sr-RS')}</b> lokacija: ${esc(g.first)} … ${esc(g.last)}${g.n>20000?' — <b style="color:var(--bad)">previše</b>':''}`:'Proveri unos'};
+  dform.addEventListener('input',upd);upd();
+}
+function genPlan(fd){
+  const a=String(fd.get('z1')||'').toUpperCase().charCodeAt(0),b=String(fd.get('z2')||fd.get('z1')||'').toUpperCase().charCodeAt(0);
+  const n1=Math.floor(num(fd.get('n1'))),n2=Math.floor(num(fd.get('n2'))),l1=Math.floor(num(fd.get('l1'))),l2=Math.floor(num(fd.get('l2'))||l1),fmt=fd.get('fmt')||'A1';
+  if(!(a>=65&&a<=90&&b>=a&&b<=90&&n1>=0&&n2>=n1))return{n:0};
+  const zones=[];for(let c=a;c<=b;c++)zones.push(String.fromCharCode(c));
+  const w=String(n2).length,lv=l1>0&&l2>=l1?l2-l1+1:0;
+  const one=(L,n,l)=>{const s=fmt.includes('001')?String(n).padStart(Math.max(3,w),'0'):String(n);return L+(fmt.includes('-')?'-':'')+s+(l?'-'+l:'')};
+  const codes=L=>{const o=[];for(let n=n1;n<=n2;n++){if(lv)for(let l=l1;l<=l2;l++)o.push(one(L,n,l));else o.push(one(L,n,0))}return o};
+  const per=(n2-n1+1)*(lv||1);
+  return{n:per*zones.length,zones,codes,first:one(zones[0],n1,lv?l1:0),last:one(zones[zones.length-1],n2,lv?l2:0)};
+}
+
+/* ---------- VIŠE STVARI ODJEDNOM ---------- */
+function openBulk(locId){
+  const body=`<div class="small muted">Svaka stvar u novom redu. Količina može na početku: <b>3x baterije</b>, <b>2 kom sijalice</b>, ili samo <b>kabl HDMI</b>.</div>
+    ${fld('Lokacija',`<div class="fld" style="background:none">📍 ${esc(pathText(locId))}</div>`)}
+    ${fld('Stvari',`<textarea class="fld" name="lines" style="min-height:180px" placeholder="Bušilica Bosch\n3x produžni kabl\nKutija sa tiplovima\n2 pak baterije AA"></textarea>`)}`;
+  openForm('📝 Više stvari odjednom',body,fd=>{const sp=curSpace();let n=0;
+    String(fd.get('lines')||'').split(/\n+/).map(s=>s.trim()).filter(Boolean).forEach(line=>{
+      let q=1,unit='kom',name=line;const m=line.match(/^(\d+(?:[.,]\d+)?)\s*(x|×|kom|par|pak|kg|g|l|m)?\.?\s+(.+)$/i);
+      if(m){q=num(m[1]);if(m[2]&&UNITS.includes(m[2].toLowerCase()))unit=m[2].toLowerCase();name=m[3]}
+      name=name.charAt(0).toUpperCase()+name.slice(1);
+      const it={id:uid(),space:sp.id,loc:locId,name,qty:q,unit,cat:guessCat(name),code:'',note:'',tags:'',exp:'',min:'',price:'',photo:'',created:Date.now(),hist:[]};
+      addHist(it,'new','Dodato u '+pathText(locId));db.items.push(it);n++});
+    save();render();toast('Dodato stvari: '+n)},'Dodaj sve');
+}
+
+/* ---------- NALEPNICE SA QR KODOM ---------- */
+function loadQR(){return new Promise((res,rej)=>{if(window.qrcode)return res();const s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js';s.onload=()=>res();s.onerror=()=>rej(new Error('Za nalepnice je potreban internet'));document.head.appendChild(s)})}
+function openLabels(locId){
+  const sp=curSpace(),all=db.locs.filter(l=>l.space===sp.id);
+  const choices=[];
+  if(locId){choices.push(['one','Samo ova lokacija']);if(descIds(locId).size>1)choices.push(['sub','Ova i sve unutra ('+descIds(locId).size+')'])}
+  choices.push(['top','Glavne lokacije ('+all.filter(l=>!l.parent).length+')']);
+  if(isMag(sp))kids('',sp.id).filter(z=>kids(z.id,sp.id).length).forEach(z=>choices.push(['z:'+z.id,'Zona '+(z.code||z.name)+' ('+kids(z.id,sp.id).length+')']));
+  choices.push(['all','Sve lokacije ('+all.length+')']);
+  const body=`<div class="small muted">Odštampaj nalepnice i zalepi ih na kutije, police i fioke. Kad skeniraš QR kod kamerom telefona, otvara se ta lokacija sa spiskom stvari.</div>
+    ${fld('Koje nalepnice',`<select class="fld" name="w">${opts(choices,choices[0][0])}</select>`)}
+    ${fld('Veličina',`<select class="fld" name="sz">${opts([['m','Srednje — 3 × 7 na A4'],['s','Male — 4 × 10 na A4'],['l','Velike — 2 × 4 na A4']],'m')}</select>`)}
+    ${fld('Na nalepnici',`<select class="fld" name="tx">${opts([['path','Naziv i putanja'],['name','Samo naziv'],['items','Naziv i spisak stvari']],'path')}</select>`)}`;
+  openForm('🏷️ Nalepnice sa QR kodom',body,fd=>{const w=fd.get('w');let list;
+    if(w==='one')list=[locById(locId)];else if(w==='sub')list=[...descIds(locId)].map(locById);else if(w==='top')list=all.filter(l=>!l.parent);
+    else if(w.startsWith('z:')){const z=w.slice(2);list=[locById(z),...kids(z,sp.id)]}else list=all;
+    list=list.filter(Boolean).sort((a,b)=>cmp(pathText(a.id),pathText(b.id)));
+    if(list.length>800&&!confirm('To je '+list.length+' nalepnica. Nastaviti?'))return false;
+    printLabels(list,fd.get('sz'),fd.get('tx'))},'🖨️ Štampaj');
+}
+async function printLabels(list,sz,tx){
+  try{await loadQR()}catch(e){toast('⚠ '+e.message);return}
+  const cols={s:4,m:3,l:2}[sz]||3,rows={s:10,m:7,l:4}[sz]||7;
+  const cells=list.map(l=>{const q=qrcode(0,'M');q.addData(BASE_URL+'#l='+l.id);q.make();
+    const items=tx==='items'?db.items.filter(i=>i.loc===l.id).map(i=>i.name).slice(0,8).join(', '):'';
+    return`<div class="lb"><div class="qr">${q.createSvgTag({cellSize:4,margin:0,scalable:true})}</div><div class="tx"><b>${esc(locLabel(l))}</b>${tx!=='name'&&l.parent?`<small>${esc(pathText(l.parent))}</small>`:''}${items?`<small>${esc(items)}</small>`:''}<i>Atmos Magacin</i></div></div>`}).join('');
+  showPrint(`<style>@page{size:A4;margin:8mm}.lbs{display:grid;grid-template-columns:repeat(${cols},1fr);grid-auto-rows:calc((297mm - 16mm)/${rows});gap:0}
+    .lb{border:1px dashed #bbb;display:flex;align-items:center;gap:2.5mm;padding:2.5mm;overflow:hidden;break-inside:avoid;color:#000;font-family:Arial,sans-serif}
+    .qr{height:100%;aspect-ratio:1;flex:none;max-width:45%}.qr svg{width:100%;height:100%;display:block}
+    .tx{min-width:0;display:flex;flex-direction:column;gap:1mm}.tx b{font-size:${sz==='s'?'9pt':sz==='l'?'16pt':'11pt'};word-break:break-word}.tx small{font-size:${sz==='s'?'6pt':'7.5pt'};color:#333;word-break:break-word}.tx i{font-size:6pt;color:#777;font-style:normal}</style>
+    <div class="lbs">${cells}</div>`);
+}
+function showPrint(html){
+  let p=$('printArea');if(!p){p=document.createElement('div');p.id='printArea';document.body.appendChild(p)}
+  p.innerHTML=html;document.body.classList.add('printing');
+  const done=()=>{document.body.classList.remove('printing');p.innerHTML='';removeEventListener('afterprint',done)};
+  addEventListener('afterprint',done);setTimeout(()=>window.print(),300);
+}
+function printInventory(){
+  const sp=curSpace(),list=db.items.filter(i=>i.space===sp.id).sort((a,b)=>cmp(pathText(a.loc),pathText(b.loc))||cmp(a.name,b.name));
+  const groups={};list.forEach(i=>{const k=pathText(i.loc);(groups[k]=groups[k]||[]).push(i)});
+  showPrint(`<style>@page{size:A4;margin:12mm}.inv{font-family:Arial,sans-serif;color:#000;font-size:10pt}.inv h1{font-size:16pt;margin:0 0 2mm}.inv h2{font-size:11pt;margin:5mm 0 1mm;border-bottom:1px solid #999}
+    .inv table{width:100%;border-collapse:collapse}.inv td{padding:1mm 2mm;border-bottom:1px solid #ddd;vertical-align:top}.inv td.q{text-align:right;white-space:nowrap;width:22mm}</style>
+    <div class="inv"><h1>${esc(sp.name)} — spisak stvari</h1><div>${fmtDate(todayStr())} · ${list.length} stvari</div>
+    ${Object.entries(groups).map(([k,a])=>`<h2>📍 ${esc(k)}</h2><table>${a.map(i=>`<tr><td>${esc(i.name)}${i.note?` <span style="color:#555">— ${esc(i.note)}</span>`:''}${i.code?` <span style="color:#555">[${esc(i.code)}]</span>`:''}</td><td class="q">${fmtQ(i.qty)} ${esc(i.unit||'kom')}</td></tr>`).join('')}</table>`).join('')}</div>`);
+}
+</script>
+
+<script>
+/* ---------- SKENIRANJE (QR nalepnice i barkodovi) ---------- */
+let scanStream=null,scanTimer=null;
+function stopScan(){clearInterval(scanTimer);scanTimer=null;if(scanStream){scanStream.getTracks().forEach(t=>t.stop());scanStream=null}}
+$('scanDlg').addEventListener('close',stopScan);
+async function openScan(onCode){
+  const body=$('scanBody');
+  if(!('BarcodeDetector' in window)||!navigator.mediaDevices){
+    body.innerHTML=`<h3>📷 Skeniranje</h3><div class="small" style="line-height:1.6">Ovaj pregledač ne podržava skeniranje u aplikaciji.<br><br>• <b>QR nalepnice</b> skeniraj običnom kamerom telefona — otvoriće se lokacija u aplikaciji.<br>• Barkod možeš upisati ručno.</div>
+      <input class="fld" id="scanMan" placeholder="Upiši kod" style="margin-top:12px" inputmode="numeric"><div class="foot"><button id="scanX">Zatvori</button><button class="btn-p" id="scanOk">U redu</button></div>`;
+    $('scanDlg').showModal();
+    $('scanX').onclick=()=>$('scanDlg').close();
+    $('scanOk').onclick=()=>{const v=$('scanMan').value.trim();$('scanDlg').close();if(v)handleCode(v,onCode)};
+    return;
+  }
+  body.innerHTML=`<h3>📷 Skeniraj QR nalepnicu ili barkod</h3><video class="scan" id="scanV" playsinline muted></video>
+    <div class="small muted" style="margin-top:8px">Usmeri kameru na QR kod sa kutije ili barkod sa pakovanja.</div><div class="foot"><button id="scanX">Zatvori</button></div>`;
+  $('scanDlg').showModal();$('scanX').onclick=()=>$('scanDlg').close();
+  try{
+    scanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});
+    const v=$('scanV');v.srcObject=scanStream;await v.play();
+    let fm=['qr_code','ean_13','ean_8','code_128','code_39','upc_a','upc_e'];
+    try{const sup=await BarcodeDetector.getSupportedFormats();fm=fm.filter(f=>sup.includes(f))}catch{}
+    const det=new BarcodeDetector({formats:fm});
+    scanTimer=setInterval(async()=>{if(v.readyState<2)return;try{const r=await det.detect(v);if(r&&r.length){const val=r[0].rawValue;$('scanDlg').close();
+      if(navigator.vibrate)navigator.vibrate(60);handleCode(val,onCode)}}catch{}},350);
+  }catch(e){body.querySelector('.small').textContent='Kamera nije dostupna: '+(e.message||e);}
+}
+function handleCode(val,onCode){
+  const m=String(val).match(/#([li])=([a-z0-9]+)/i);
+  if(m){openRef(m[1],m[2]);return}
+  if(onCode){onCode(val);return}
+  const hits=db.items.filter(i=>i.code&&i.code===val);
+  if(hits.length===1){S().space=hits[0].space;render();openItem(hits[0].id);return}
+  if(hits.length>1){ui.q=val;ui.allSp=true;go('pregled');return}
+  if(confirm('Nema stvari sa kodom '+val+'. Dodati novu stvar sa ovim kodom?'))openItemForm(null,{code:val});
+}
+function openRef(t,id){
+  if(t==='l'){const l=locById(id);if(!l){toast('Lokacija nije pronađena na ovom uređaju');return}S().space=l.space;ui.loc=l.id;go('lokacije',true)}
+  else{const i=itemById(id);if(!i){toast('Stvar nije pronađena');return}S().space=i.space;render();openItem(i.id)}
+}
+
+/* ---------- PRETRAGA GLASOM ---------- */
+function voice(){
+  const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){toast('Glasovna pretraga nije podržana');return}
+  const r=new R();r.lang='sr-RS';r.interimResults=false;r.maxAlternatives=1;
+  r.onresult=e=>{const t=e.results[0][0].transcript.replace(/^(gde (je|su)|где (је|су))\s+/i,'').replace(/[?.!]$/,'');ui.q=t;ui.tab=ui.tab==='stvari'?'stvari':'pregled';render()};
+  r.onerror=e=>toast(e.error==='not-allowed'?'Dozvoli mikrofon':'Nisam razumeo — probaj ponovo');
+  toast('🎤 Slušam… reci šta tražiš');try{r.start()}catch{}
+}
+
+/* ---------- DELJENJE ---------- */
+async function shareText(title,text){
+  try{if(navigator.share){await navigator.share({title,text});return}}catch(e){if(e&&e.name==='AbortError')return}
+  try{await navigator.clipboard.writeText(text);toast('Kopirano — nalepi gde želiš')}catch{toast('Deljenje nije uspelo')}
+}
+
+/* ---------- IZVOZ / UVOZ ---------- */
+function exportJson(){S().lastExport=todayStr();save();download(`atmos_magacin_${todayStr()}.json`,JSON.stringify(Object.assign({app:'Atmos Magacin',version:APP_VERSION},db),null,1),'application/json');toast('Rezervna kopija je preuzeta ✔');render()}
+function exportCsv(){
+  const q=v=>{v=String(v??'');return/[;"\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+  const rows=[['Prostor','Stvar','Količina','Jedinica','Kategorija','Lokacija','Šifra / barkod','Cena','Minimum','Rok','Pozajmljeno','Napomena','Oznake']];
+  db.items.forEach(i=>rows.push([(spaceById(i.space)||{}).name,i.name,String(num(i.qty)).replace('.',','),i.unit,i.cat,pathText(i.loc),i.code,i.price,i.min,i.exp,i.lent&&i.lent.to?i.lent.to+' ('+fmtDate(i.lent.date)+')':'',i.note,i.tags]));
+  download(`atmos_magacin_${todayStr()}.csv`,'﻿'+rows.map(r=>r.map(q).join(';')).join('\r\n'),'text/csv');
+}
+$('impFile').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const d=JSON.parse(r.result);if(!d||!Array.isArray(d.items)||!Array.isArray(d.locs))throw 0;
+    if(hasData()&&!confirm(`Vratiti kopiju (${d.items.length} stvari, ${d.locs.length} lokacija)? Trenutni podaci se zamenjuju — pre toga se čuva automatska kopija.`))return;
+    takeSnap('pre uvoza',true);delete d.app;delete d.version;db=normDb(d);if(!spaceById(S().space))S().space=db.spaces[0]?db.spaces[0].id:'';
+    save();go('pregled');toast('Podaci vraćeni ✔')}catch{toast('Fajl nije ispravna rezervna kopija Atmos Magacina')}};
+  r.readAsText(f);e.target.value=''});
+
+/* ---------- AKCIJE ---------- */
+function delLoc(id){
+  const l=locById(id);if(!l)return;const ids=descIds(id),sub=ids.size-1,its=db.items.filter(i=>ids.has(i.loc));
+  if(!confirm(`Obrisati lokaciju „${locLabel(l)}“?${sub?`\n${sub} podlokacija se briše zajedno sa njom.`:''}${its.length?`\n${its.length} stvari se premešta u „${l.parent?locLabel(locById(l.parent)):'Bez lokacije'}“.`:''}`))return;
+  its.forEach(i=>{addHist(i,'move','Lokacija „'+locLabel(locById(i.loc))+'“ obrisana → '+(l.parent?pathText(l.parent):'bez lokacije'));i.loc=l.parent||''});
+  db.locs=db.locs.filter(x=>!ids.has(x.id));save();ui.loc=l.parent||'';render();toast('Lokacija obrisana');
+}
+function newSpaceDlg(type,sp){
+  const body=`${fld('Vrsta',`<div class="types" id="tSel">${Object.entries(TYPES).map(([k,t])=>`<button type="button" data-t="${k}" class="${(sp?sp.type:type||'kuca')===k?'on':''}"><span style="font-size:1.6rem">${t.ic}</span><span><b>${t.n}</b><small>${t.d}</small></span></button>`).join('')}</div>`)}
+    ${fld('Naziv',`<input class="fld" name="name" value="${esc(sp?sp.name:'')}" placeholder="npr. Stan, Garaža, Vikendica Fruška gora, Magacin Zemun">`)}
+    ${sp?'':'<div class="small muted" style="margin-top:8px">Za kuću, garažu i vikendicu odmah se prave osnovne lokacije (sobe, radni sto, regal…) — možeš ih menjati i brisati.</div>'}`;
+  let t=sp?sp.type:type||'kuca';
+  openForm(sp?'✏️ Izmeni prostor':'➕ Novi prostor',body,fd=>{const name=String(fd.get('name')||'').trim()||TYPES[t].n;
+    if(sp){sp.name=name;sp.type=t}else addSpace(name,t);save();ui.loc='';go(sp?'podesavanja':'pregled')});
+  $('tSel').onclick=e=>{const b=e.target.closest('[data-t]');if(!b)return;t=b.dataset.t;$('tSel').querySelectorAll('button').forEach(o=>o.classList.toggle('on',o===b))};
+}
+
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-act],[data-tab],[data-set]');if(!b||b.closest('#pickBody'))return;const d=b.dataset;
+  if(d.set){S()[d.set]=d.val;save();render();return}
+  if(d.tab&&!d.act){ui.q='';go(d.tab);return}
+  const sp=curSpace(),i=d.id?itemById(d.id):null;
+  switch(d.act){
+    case'tab':ui.q='';go(d.to);break;
+    case'newspace':newSpaceDlg(d.type);break;
+    case'newspacedlg':newSpaceDlg();break;
+    case'editspace':newSpaceDlg(null,spaceById(d.id));break;
+    case'delspace':{const s=spaceById(d.id);if(!s)break;const n=db.items.filter(x=>x.space===s.id).length;
+      if(!confirm(`Obrisati prostor „${s.name}“ sa svim lokacijama${n?' i '+n+' stvari':''}?`))break;
+      if(n&&prompt('Za potvrdu upiši: OBRIŠI')!=='OBRIŠI'){toast('Nije obrisano');break}
+      takeSnap('pre brisanja prostora',true);db.items=db.items.filter(x=>x.space!==s.id);db.locs=db.locs.filter(x=>x.space!==s.id);db.spaces=db.spaces.filter(x=>x.id!==s.id);
+      if(S().space===s.id)S().space=db.spaces[0]?db.spaces[0].id:'';save();render();break}
+    case'additem':if(dlg.open)dlg.close();openItemForm(null,Object.assign({},d.name?{name:d.name}:{},d.loc?{loc:d.loc}:{}));break;
+    case'oitem':openItem(d.id);break;
+    case'edititem':if(i)openItemForm(i);break;
+    case'oloc':if(dlg.open)dlg.close();ui.loc=d.id||'';ui.q='';go('lokacije',true);break;
+    case'gotoloc':dlg.close();ui.loc=d.id;go('lokacije',true);break;
+    case'addloc':openLocForm(null,d.parent||(ui.tab==='lokacije'&&ui.loc)||'');break;
+    case'editloc':openLocForm(locById(d.id));break;
+    case'delloc':delLoc(d.id);break;
+    case'tg':e.stopPropagation();ui.open[d.id]=!ui.open[d.id];render();break;
+    case'expand':db.locs.forEach(l=>{if(l.space===sp.id)ui.open[l.id]=true});render();break;
+    case'collapse':ui.open={};render();break;
+    case'zone':ui.zone=ui.zone===d.id?'':d.id;ui.zpage=0;render();break;
+    case'zpage':ui.zpage=+d.i;render();break;
+    case'gen':openGen();break;
+    case'bulk':openBulk(d.loc);break;
+    case'labels':openLabels(d.loc||'');break;
+    case'printinv':printInventory();break;
+    case'cat':ui.cat=d.cat;render();break;
+    case'catgo':ui.cat=d.cat;ui.q='';go('stvari',true);break;
+    case'clearq':ui.q='';render();break;
+    case'voice':voice();break;
+    case'qty':if(i){i.qty=Math.max(0,Math.round((num(i.qty)+num(d.d))*1000)/1000);addHist(i,d.d>0?'in':'out',(d.d>0?'+1':'−1')+' → '+fmtQ(i.qty)+' '+(i.unit||'kom'));save();render();openItem(i.id)}break;
+    case'inout':if(i){const v=prompt(`Ulaz ili izlaz za „${i.name}“\nUpiši npr. +20 za ulaz ili -5 za izlaz:`,'+');if(v==null)break;const n=num(v.replace('+',''));if(!n)break;
+      const note=prompt('Napomena (opciono — npr. broj otpremnice, kupac):','')||'';
+      i.qty=Math.max(0,Math.round((num(i.qty)+n)*1000)/1000);addHist(i,n>0?'in':'out',(n>0?'Ulaz +':'Izlaz ')+fmtQ(n)+' → stanje '+fmtQ(i.qty)+(note?' · '+note:''));save();render();openItem(i.id)}break;
+    case'move':if(i)openPicker(i.space,i.loc,id=>{if(id===i.loc)return;const old=i.loc;i.loc=id;addHist(i,'move','Premešteno: '+pathText(old)+' → '+pathText(id));save();render();openItem(i.id);toast('Premešteno ✔')});break;
+    case'moveall':{const l=locById(d.id);if(!l)break;const its=db.items.filter(x=>x.loc===l.id);
+      openPicker(l.space,'',id=>{if(id===l.id)return;its.forEach(x=>{x.loc=id;addHist(x,'move','Premešteno: '+pathText(l.id)+' → '+pathText(id))});save();render();toast('Premešteno stvari: '+its.length)});break}
+    case'lend':if(i){const who=prompt('Kome je pozajmljeno?');if(!who)break;i.lent={to:who.trim(),date:todayStr()};addHist(i,'lend','Pozajmljeno: '+who.trim());save();render();openItem(i.id)}break;
+    case'ret':if(i){addHist(i,'ret','Vraćeno od: '+i.lent.to);i.lent=null;save();render();openItem(i.id);toast('Vraćeno ✔')}break;
+    case'shareitem':if(i)shareText(i.name,`${i.name}${num(i.qty)!==1?' ('+fmtQ(i.qty)+' '+(i.unit||'kom')+')':''}\n📍 ${pathText(i.loc,true)}${i.note?'\n📝 '+i.note:''}`);break;
+    case'shareloc':{const l=locById(d.id);if(!l)break;const ids=descIds(l.id),its=db.items.filter(x=>ids.has(x.loc));
+      shareText(locLabel(l),`📍 ${pathText(l.id,true)}\n\n${its.map(x=>'• '+x.name+(num(x.qty)!==1?' — '+fmtQ(x.qty)+' '+(x.unit||'kom'):'')+(x.loc!==l.id?' ('+locLabel(locById(x.loc))+')':'')).join('\n')||'(prazno)'}`);break}
+    case'copyitem':if(i){const c=JSON.parse(JSON.stringify(i));c.id=uid();c.name=i.name+' (kopija)';c.hist=[];c.created=Date.now();addHist(c,'new','Kopirano');db.items.push(c);save();render();openItemForm(c);}break;
+    case'delitem':if(i&&confirm(`Obrisati „${i.name}“?`)){db.items=db.items.filter(x=>x.id!==i.id);save();dlg.close();render();toast('Obrisano')}break;
+    case'export':exportJson();break;
+    case'import':$('impFile').click();break;
+    case'csv':exportCsv();break;
+    case'snap':restoreSnap(+d.i);break;
+    case'reset':if(confirm('Obrisati SVE podatke sa ovog uređaja?')&&prompt('Za potvrdu upiši: OBRIŠI')==='OBRIŠI'){takeSnap('pre brisanja',true);db=fresh();if(gd.on){gd.h={};gdStore()}save();go('pregled')}break;
+    case'upd':checkUpdate(false);break;
+    case'gdconnect':gdConnect();break;
+    case'gdsync':gdSync(true);break;
+    case'gdoff':gdDisconnect();break;
+  }
+});
+document.addEventListener('change',e=>{const t=e.target;
+  if(t.id==='spaceSel'){if(t.value==='__new'){render();newSpaceDlg();return}S().space=t.value;ui.loc='';ui.cat='';save();render();return}
+  if(t.dataset.act==='sort'){ui.sort=t.value;render()}
+  if(t.dataset.act==='allsp'){ui.allSp=t.checked;render()}
+  if(t.dataset.act==='bdays'){S().backupDays=num(t.value);save()}
+});
+let qT=null;
+document.addEventListener('input',e=>{if(e.target.id!=='q')return;ui.q=e.target.value;clearTimeout(qT);qT=setTimeout(()=>{ui.focusQ=true;render()},220)});
+$('fab').onclick=()=>{if(ui.tab==='lokacije')openLocForm(null,ui.loc||'');else openItemForm()};
+$('scanBtn').onclick=()=>openScan();
+</script>
+
+<script>
+/* ---------- GOOGLE DRIVE SINHRONIZACIJA ----------
+   Podaci se čuvaju u fajlu „Atmos Magacin — podaci.json“ na Google Drive-u korisnika (dozvola drive.file:
+   aplikacija vidi samo fajlove koje je sama napravila). Svi uređaji prijavljeni istim Google nalogom dele podatke.
+   Izmene se šalju par sekundi posle čuvanja i na svakih 5 minuta, dok važi Google dozvola (oko 1 sat);
+   posle toga jedan dodir na „Sinhronizuj“ obnavlja dozvolu. Ako isti zapis menjaju dva uređaja, važi kasnija izmena. */
+const GD_CLIENT='867108184410-ctavf0871su36rju6n465rd0149ps2mu.apps.googleusercontent.com';
+const GD_SCOPE='https://www.googleapis.com/auth/drive.file',GD_NAME='Atmos Magacin — podaci.json',GD_KEY='atmosMag1_gdrive';
+const GD_COLLS=['spaces','locs','items'];
+const GD_LOCAL=['theme','accent','fs','space','backupDays','lastExport','snapKeep','lastUpdCheck'];
+let gd=(()=>{try{const x=JSON.parse(localStorage.getItem(GD_KEY));if(x&&x.h)return x}catch{}return{on:false,fileId:'',h:{},last:0,err:'',email:''}})();
+let gdTok=(()=>{try{const t=JSON.parse(sessionStorage.getItem(GD_KEY+'_t'));if(t&&t.exp>Date.now()+60000)return t}catch{}return null})();
+let gdClient=null,gdBusy=false,gdT=null,gdWait=null;
+const gdStore=()=>{try{localStorage.setItem(GD_KEY,JSON.stringify(gd))}catch{}};
+const gdValid=()=>!!(gdTok&&gdTok.exp>Date.now()+60000);
+function gdHash(o){const t=JSON.stringify(o);let h=2166136261;for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(36)+t.length.toString(36)}
+function gdShared(){const o={};Object.keys(S()).forEach(k=>{if(!GD_LOCAL.includes(k))o[k]=S()[k]});return o}
+function gdLocal(){const m={};GD_COLLS.forEach(c=>(db[c]||[]).forEach(r=>{if(r&&r.id)m[c+'/'+r.id]=r}));m._set=gdShared();return m}
+function gdLoadLib(){return new Promise((res,rej)=>{if(window.google&&google.accounts&&google.accounts.oauth2)return res();
+  const sc=document.createElement('script');sc.src='https://accounts.google.com/gsi/client';sc.async=true;sc.onload=()=>res();sc.onerror=()=>rej(new Error('Google biblioteka nije učitana (internet?)'));document.head.appendChild(sc)})}
+async function gdAuth(consent){
+  await gdLoadLib();
+  return new Promise((res,rej)=>{
+    if(!gdClient)gdClient=google.accounts.oauth2.initTokenClient({client_id:GD_CLIENT,scope:GD_SCOPE,callback:()=>{},error_callback:()=>{}});
+    gdClient.callback=r=>{if(r&&r.access_token){gdTok={t:r.access_token,exp:Date.now()+(Number(r.expires_in)||3600)*1000};try{sessionStorage.setItem(GD_KEY+'_t',JSON.stringify(gdTok))}catch{}res()}else rej(new Error((r&&r.error)||'Dozvola nije data'))};
+    gdClient.error_callback=e=>rej(new Error(e&&e.type==='popup_closed'?'Prozor za prijavu je zatvoren':'Prijava na Google nije uspela'));
+    gdClient.requestAccessToken({prompt:consent?'consent':'',hint:gd.email||undefined});
+  });
+}
+async function gdApi(url,opt){
+  const r=await fetch(url,Object.assign({},opt,{headers:Object.assign({Authorization:'Bearer '+gdTok.t},(opt&&opt.headers)||{})}));
+  if(r.status===401){gdTok=null;try{sessionStorage.removeItem(GD_KEY+'_t')}catch{}throw new Error('auth')}
+  if(!r.ok)throw new Error('Drive greška '+r.status);
+  return r;
+}
+async function gdFindFile(){
+  if(gd.fileId){try{await gdApi('https://www.googleapis.com/drive/v3/files/'+gd.fileId+'?fields=id,trashed');return gd.fileId}catch(e){if(e.message==='auth')throw e;gd.fileId=''}}
+  const q=encodeURIComponent("name='"+GD_NAME.replace(/'/g,"\\'")+"' and trashed=false");
+  const j=await (await gdApi('https://www.googleapis.com/drive/v3/files?spaces=drive&orderBy=modifiedTime desc&fields=files(id)&q='+q)).json();
+  gd.fileId=(j.files&&j.files[0]&&j.files[0].id)||'';return gd.fileId;
+}
+async function gdUpload(body){
+  const txt=JSON.stringify(body);
+  if(gd.fileId){await gdApi('https://www.googleapis.com/upload/drive/v3/files/'+gd.fileId+'?uploadType=media',{method:'PATCH',headers:{'Content-Type':'application/json'},body:txt});return}
+  const b='atmosmag'+Date.now(),meta={name:GD_NAME,mimeType:'application/json',description:'Podaci aplikacije Atmos Magacin. Ne menjaj ručno.'};
+  const r=await gdApi('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id',{method:'POST',headers:{'Content-Type':'multipart/related; boundary='+b},
+    body:'--'+b+'\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n'+JSON.stringify(meta)+'\r\n--'+b+'\r\nContent-Type: application/json\r\n\r\n'+txt+'\r\n--'+b+'--'});
+  gd.fileId=(await r.json()).id;
+}
+function gdSoon(ms){if(!gd.on||!GD_CLIENT)return;clearTimeout(gdT);gdT=setTimeout(()=>{if(gdValid())gdSync()},ms==null?5000:ms)}
+async function gdSync(manual){
+  if(!GD_CLIENT||!gd.on||gdBusy)return;
+  if(!navigator.onLine){gd.err='Nema interneta — izmene čekaju';gdStore();if(manual)toast(gd.err);return}
+  if(document.querySelector('dialog[open]')&&!manual){gdSoon(20000);return}
+  gdBusy=true;if(manual)render();let redraw=!!manual,retry=false;
+  try{
+    if(!gdValid()){if(!manual){gd.err='Potrebna je potvrda — dodirni „Sinhronizuj“';gdStore();return}await gdAuth(false)}
+    const ver=async()=>gd.fileId?Number((await (await gdApi('https://www.googleapis.com/drive/v3/files/'+gd.fileId+'?fields=version')).json()).version)||0:0;
+    let remote={recs:{}},v0=0;
+    if(await gdFindFile()){v0=await ver();try{remote=await (await gdApi('https://www.googleapis.com/drive/v3/files/'+gd.fileId+'?alt=media')).json()}catch(e){if(e.message==='auth')throw e;remote={recs:{}}}}
+    const R=remote.recs||{},loc=gdLocal(),now=Date.now(),out=Object.assign({},R);let got=0,sent=0;
+    const mine={};Object.keys(loc).forEach(k=>{const h=gdHash(loc[k]);if(gd.h[k]!==h||!(k in R))mine[k]=loc[k]});
+    Object.keys(gd.h).forEach(k=>{if(!(k in loc))mine[k]=null});
+    Object.keys(R).forEach(k=>{
+      const rv=R[k]&&R[k].d!==undefined?R[k].d:null,rh=rv?gdHash(rv):null;
+      if(k in mine)return;
+      if(rh===(gd.h[k]||null))return;
+      if(k==='_set'){if(rv){const keep={};GD_LOCAL.forEach(x=>{if(x in S())keep[x]=S()[x]});db.settings=Object.assign(fresh().settings,rv,keep);got++}gd.h[k]=gdHash(gdShared());return}
+      const [c,id]=k.split('/');if(!GD_COLLS.includes(c))return;
+      const i=db[c].findIndex(x=>x.id===id);
+      if(rv){if(i>=0)db[c][i]=rv;else db[c].push(rv);gd.h[k]=rh}else{if(i>=0)db[c].splice(i,1);delete gd.h[k]}
+      got++;
+    });
+    Object.keys(mine).forEach(k=>{out[k]={t:now,d:mine[k]};sent++;if(mine[k])gd.h[k]=gdHash(mine[k]);else delete gd.h[k]});
+    if(gd.fileId&&sent&&(await ver())!==v0){if((gdSync.retry=(gdSync.retry||0)+1)<=3){retry=true;gdBusy=false;setTimeout(()=>gdSync(manual),300+Math.random()*700);return}}
+    gdSync.retry=0;
+    if(sent||!gd.fileId)await gdUpload({app:'Atmos Magacin',v:1,t:new Date().toISOString(),recs:out});
+    if(got){db=normDb(db);if(!spaceById(S().space))S().space=db.spaces[0]?db.spaces[0].id:'';try{localStorage.setItem(KEY,JSON.stringify(db))}catch{}}
+    gd.last=Date.now();gd.err='';gdStore();
+    if(manual)toast(got?'Sinhronizovano ✔ — stiglo izmena: '+got:'Sinhronizovano ✔');
+    if(got||ui.tab==='podesavanja')redraw=true;
+  }catch(e){
+    gd.err=e.message==='auth'?'Potrebna je potvrda — dodirni „Sinhronizuj“':String(e.message||'Greška');gdStore();if(manual)toast('⚠ '+gd.err);
+  }finally{if(!retry){gdBusy=false;if(redraw||ui.tab==='podesavanja')gdRender()}}
+}
+function gdRender(){const a=document.activeElement;if(document.querySelector('dialog[open]')||(a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))){clearTimeout(gdWait);gdWait=setTimeout(gdRender,1500);return}render()}
+async function gdConnect(){
+  if(!GD_CLIENT){toast('Google Drive još nije podešen');return}
+  try{await gdAuth(true);
+    try{const u=await (await gdApi('https://www.googleapis.com/drive/v3/about?fields=user(emailAddress)')).json();gd.email=(u.user&&u.user.emailAddress)||''}catch{}
+    const empty=!db.items.length;
+    /* nov uređaj bez stvari: početni prostori se ne šalju, uzimaju se oni sa Drive-a */
+    let starter=null;if(empty){starter={spaces:db.spaces,locs:db.locs};db.spaces=[];db.locs=[]}
+    gd.on=true;gd.h={};gd.fileId='';
+    if(empty)gd.h._set=gdHash(gdShared());
+    gdStore();toast('Google Drive povezan ✔');await gdSync(true);
+    if(starter&&!db.spaces.length&&starter.spaces.length){db.spaces=starter.spaces;db.locs=starter.locs;S().space=db.spaces[0].id;save()}
+    if(!spaceById(S().space))S().space=db.spaces[0]?db.spaces[0].id:'';
+    render()}
+  catch(e){toast('⚠ '+(e.message||'Povezivanje nije uspelo'))}
+}
+function gdDisconnect(){
+  if(!confirm('Prekinuti sinhronizaciju sa Google Drive-om? Podaci ostaju i na uređaju i na Drive-u.'))return;
+  try{if(gdTok&&window.google&&google.accounts)google.accounts.oauth2.revoke(gdTok.t,()=>{})}catch{}
+  gdTok=null;try{sessionStorage.removeItem(GD_KEY+'_t')}catch{}
+  gd={on:false,fileId:'',h:{},last:0,err:'',email:''};gdStore();render();toast('Veza sa Google Drive-om je prekinuta');
+}
+function gdCard(){
+  if(!GD_CLIENT)return'';
+  if(!gd.on)return`<div class="card"><h3>☁️ Google Drive</h3>
+    <div class="small muted" style="margin-bottom:10px">Čuvaj podatke na svom Google Drive-u i koristi ih na više uređaja (telefon, tablet, računar) — npr. ceo tim u magacinu ili cela porodica. Aplikacija vidi samo svoj fajl „${esc(GD_NAME)}“, ništa drugo sa tvog Drive-a.</div>
+    <button class="btn-p" data-act="gdconnect" style="width:100%">☁️ Poveži Google Drive</button></div>`;
+  const t=gd.last?fmtTime(gd.last):'nikad';
+  const st=gdBusy?'Sinhronizacija…':gd.err||(gdValid()?'✔ Radi':'Čeka potvrdu (dodirni Sinhronizuj)');
+  return`<div class="card"><h3>☁️ Google Drive</h3>
+    <div class="small muted" style="margin-bottom:8px">Povezan${gd.email?' nalog <b>'+esc(gd.email)+'</b>':''}. Svi uređaji sa istim Google nalogom dele podatke. Izmene se šalju par sekundi posle čuvanja i na svakih 5 minuta.</div>
+    <div class="row sp" style="padding:6px 0;border-bottom:1px solid var(--line);gap:12px;align-items:flex-start"><span class="muted" style="flex:none">Stanje</span><b style="text-align:right;${gd.err?'color:var(--warn)':''}">${esc(st)}</b></div>
+    <div class="row sp" style="padding:6px 0;border-bottom:1px solid var(--line);margin-bottom:10px"><span class="muted">Poslednja sinhronizacija</span><b>${esc(t)}</b></div>
+    <div class="row wrap" style="gap:8px"><button class="btn-p grow" data-act="gdsync" ${gdBusy?'disabled':''}>🔄 Sinhronizuj sada</button><button class="grow" data-act="gdoff">Prekini vezu</button></div></div>`;
+}
+function gdStrip(){
+  if(!GD_CLIENT||!gd.on||gdValid())return'';
+  return`<div class="card" style="padding:10px 14px"><div class="row sp" style="gap:10px"><span class="small">☁️ Google Drive čeka potvrdu${gd.last?' · poslednja sinhronizacija '+fmtTime(gd.last):''}</span><button class="btn-s btn-p" data-act="gdsync">🔄 Sinhronizuj</button></div></div>`;
+}
+setInterval(()=>{if(gd.on&&gdValid())gdSync()},5*60*1000);
+addEventListener('online',()=>gdSoon(2000));
+
+/* ---------- AŽURIRANJE ---------- */
+async function fetchRemoteVersion(){
+  const r=await fetch(location.href.split('#')[0].split('?')[0],{cache:'no-cache'});
+  if(!r.ok)throw new Error('http '+r.status);
+  const m=(await r.text()).match(/APP_VERSION\s*=\s*'([^']+)'/);
+  return m?m[1]:null;
+}
+function showUpdPrompt(rv){
+  if(window._updShown||$('updOv'))return;window._updShown=true;
+  const o=document.createElement('div');o.id='updOv';
+  o.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:10000;padding:16px';
+  o.innerHTML='<div style="background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:18px;max-width:360px;width:100%;padding:22px;text-align:center;line-height:1.5"><div style="font-size:2rem">🔄</div><h3 style="margin:6px 0 8px">Dostupna je nova verzija</h3><p style="margin:0 0 14px;font-size:.9rem">Instalirana: <b>'+APP_VERSION+'</b> · nova: <b>'+esc(rv)+'</b><br>Pre ažuriranja se automatski čuva kopija podataka.</p><div style="display:flex;gap:8px"><button id="updLater" style="flex:1">Kasnije</button><button id="updNow" class="btn-p" style="flex:1">Ažuriraj</button></div></div>';
+  document.body.appendChild(o);
+  $('updLater').onclick=()=>o.remove();
+  $('updNow').onclick=()=>{o.remove();doUpdate()};
+}
+async function checkUpdate(silent){
+  if(!navigator.onLine){if(!silent)toast('Nema internet veze');return}
+  try{
+    const rv=await fetchRemoteVersion();
+    try{const reg=await navigator.serviceWorker?.getRegistration();reg&&reg.update()}catch{}
+    if(!rv){if(!silent)toast('Ne mogu da pročitam verziju sa servera');return}
+    S().lastUpdCheck=todayStr();try{localStorage.setItem(KEY,JSON.stringify(db))}catch{}
+    if(rv!==APP_VERSION){ui.upd=rv;if(silent)showUpdPrompt(rv);else if(confirm(`Dostupna je verzija ${rv} (imaš ${APP_VERSION}). Ažurirati sada?`))doUpdate();render()}
+    else{ui.upd=null;if(!silent){toast(`Imaš najnoviju verziju (${APP_VERSION}) ✔`);render()}}
+  }catch(e){if(!silent)toast('Provera nije uspela (nema mreže?)')}
+}
+async function doUpdate(){
+  try{
+    takeSnap('pre ažuriranja',true);
+    localStorage.setItem(PRE,JSON.stringify({t:new Date().toISOString(),from:APP_VERSION,n:countAll(db)}));
+    toast('Kopija sačuvana, ažuriram…');
+    await new Promise(r=>setTimeout(r,900));
+    if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()))}
+    if(window.caches){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)))}
+    await fetch(location.href.split('#')[0],{cache:'reload'}).catch(()=>{});
+    location.reload();
+  }catch(e){toast('Ažuriranje nije uspelo: '+(e.message||e))}
+}
+function verifyAfterUpdate(){
+  try{const raw=localStorage.getItem(PRE);if(!raw)return;const pre=JSON.parse(raw);localStorage.removeItem(PRE);
+    if(countAll(db)<pre.n){const s=getSnaps()[0];if(s){const photos={};db.items.forEach(x=>{if(x.photo)photos[x.id]=x.photo});db=normDb(JSON.parse(s.data));db.items.forEach(x=>{if(photos[x.id])x.photo=photos[x.id]});save();setTimeout(()=>toast('Podaci vraćeni iz kopije pre ažuriranja ✔'),800)}}
+    else setTimeout(()=>toast(`Ažurirano na ${APP_VERSION} ✔`),800)}catch{}
+}
+
+/* ---------- POKRETANJE ---------- */
+function readHash(){const m=location.hash.match(/^#([li])=([a-z0-9]+)/i);if(!m)return;history.replaceState(null,'',location.pathname+location.search);openRef(m[1],m[2])}
+addEventListener('hashchange',readHash);
+matchMedia('(prefers-color-scheme: light)').addEventListener?.('change',()=>S().theme==='auto'&&applyTheme());
+verifyAfterUpdate();
+takeSnap();
+render();
+readHash();
+if(gd.on&&gdValid())setTimeout(()=>gdSync(),2500);
+if(S().lastUpdCheck!==todayStr())setTimeout(()=>checkUpdate(true),4000);
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+<div class="coffee-ov" id="coffeeOv" role="dialog" aria-modal="true" aria-labelledby="coffeeT"><div class="coffee-box"><button class="coffee-x" id="coffeeX" aria-label="Zatvori">&times;</button><h3 id="coffeeT">&#9749; Plati mi kafu</h3><p>Ako Vam se dopadaju moje aplikacije i želite da uplatite neki simboličan iznos za kafu ili ručak :D</p><p>Možete donirati na račun:</p><div class="coffee-acc">115000000006810143</div><p><b>Željko Ilić</b><br>Beograd</p><button class="btn-p" id="coffeeCopy" type="button">Kopiraj broj računa</button><div class="coffee-amts"><button type="button" data-a="200" class="">200 RSD</button><button type="button" data-a="500" class="on">500 RSD</button><button type="button" data-a="1000" class="">1000 RSD</button></div><div class="coffee-qr"><div class="coffee-qrv" data-a="200" hidden><svg role="img" aria-label="IPS QR kod 200 RSD" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 49" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM36 4h1v1h-1zM38 4h1v1h-1zM39 4h1v1h-1zM40 4h1v1h-1zM41 4h1v1h-1zM42 4h1v1h-1zM43 4h1v1h-1zM44 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM33 5h1v1h-1zM36 5h1v1h-1zM38 5h1v1h-1zM44 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM17 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM21 6h1v1h-1zM23 6h1v1h-1zM28 6h1v1h-1zM32 6h1v1h-1zM34 6h1v1h-1zM38 6h1v1h-1zM40 6h1v1h-1zM41 6h1v1h-1zM42 6h1v1h-1zM44 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM23 7h1v1h-1zM25 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM31 7h1v1h-1zM34 7h1v1h-1zM35 7h1v1h-1zM38 7h1v1h-1zM40 7h1v1h-1zM41 7h1v1h-1zM42 7h1v1h-1zM44 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM13 8h1v1h-1zM19 8h1v1h-1zM21 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM33 8h1v1h-1zM38 8h1v1h-1zM40 8h1v1h-1zM41 8h1v1h-1zM42 8h1v1h-1zM44 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM24 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM35 9h1v1h-1zM38 9h1v1h-1zM44 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM39 10h1v1h-1zM40 10h1v1h-1zM41 10h1v1h-1zM42 10h1v1h-1zM43 10h1v1h-1zM44 10h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM14 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM23 11h1v1h-1zM26 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM32 11h1v1h-1zM33 11h1v1h-1zM34 11h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM30 12h1v1h-1zM33 12h1v1h-1zM34 12h1v1h-1zM36 12h1v1h-1zM38 12h1v1h-1zM41 12h1v1h-1zM43 12h1v1h-1zM44 12h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM6 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM29 13h1v1h-1zM30 13h1v1h-1zM32 13h1v1h-1zM33 13h1v1h-1zM35 13h1v1h-1zM37 13h1v1h-1zM38 13h1v1h-1zM39 13h1v1h-1zM40 13h1v1h-1zM42 13h1v1h-1zM43 13h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM32 14h1v1h-1zM34 14h1v1h-1zM36 14h1v1h-1zM41 14h1v1h-1zM43 14h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM11 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM29 15h1v1h-1zM32 15h1v1h-1zM35 15h1v1h-1zM37 15h1v1h-1zM38 15h1v1h-1zM41 15h1v1h-1zM4 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM31 16h1v1h-1zM32 16h1v1h-1zM33 16h1v1h-1zM34 16h1v1h-1zM39 16h1v1h-1zM41 16h1v1h-1zM42 16h1v1h-1zM43 16h1v1h-1zM44 16h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM24 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM33 17h1v1h-1zM34 17h1v1h-1zM35 17h1v1h-1zM38 17h1v1h-1zM39 17h1v1h-1zM41 17h1v1h-1zM42 17h1v1h-1zM44 17h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM7 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM17 18h1v1h-1zM19 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM33 18h1v1h-1zM35 18h1v1h-1zM37 18h1v1h-1zM41 18h1v1h-1zM42 18h1v1h-1zM43 18h1v1h-1zM44 18h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM13 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM31 19h1v1h-1zM34 19h1v1h-1zM35 19h1v1h-1zM37 19h1v1h-1zM40 19h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM26 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM33 20h1v1h-1zM34 20h1v1h-1zM35 20h1v1h-1zM37 20h1v1h-1zM40 20h1v1h-1zM41 20h1v1h-1zM43 20h1v1h-1zM5 21h1v1h-1zM8 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM14 21h1v1h-1zM19 21h1v1h-1zM22 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM31 21h1v1h-1zM32 21h1v1h-1zM33 21h1v1h-1zM34 21h1v1h-1zM37 21h1v1h-1zM38 21h1v1h-1zM39 21h1v1h-1zM42 21h1v1h-1zM43 21h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM33 22h1v1h-1zM36 22h1v1h-1zM37 22h1v1h-1zM41 22h1v1h-1zM42 22h1v1h-1zM43 22h1v1h-1zM4 23h1v1h-1zM6 23h1v1h-1zM7 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM15 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM31 23h1v1h-1zM36 23h1v1h-1zM37 23h1v1h-1zM39 23h1v1h-1zM41 23h1v1h-1zM42 23h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM7 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM19 24h1v1h-1zM23 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM34 24h1v1h-1zM36 24h1v1h-1zM38 24h1v1h-1zM40 24h1v1h-1zM41 24h1v1h-1zM42 24h1v1h-1zM44 24h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM7 25h1v1h-1zM8 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM35 25h1v1h-1zM36 25h1v1h-1zM38 25h1v1h-1zM39 25h1v1h-1zM40 25h1v1h-1zM41 25h1v1h-1zM43 25h1v1h-1zM4 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM32 26h1v1h-1zM33 26h1v1h-1zM34 26h1v1h-1zM37 26h1v1h-1zM39 26h1v1h-1zM40 26h1v1h-1zM42 26h1v1h-1zM43 26h1v1h-1zM5 27h1v1h-1zM7 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM27 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM38 27h1v1h-1zM39 27h1v1h-1zM40 27h1v1h-1zM43 27h1v1h-1zM44 27h1v1h-1zM4 28h1v1h-1zM7 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM27 28h1v1h-1zM29 28h1v1h-1zM32 28h1v1h-1zM36 28h1v1h-1zM42 28h1v1h-1zM43 28h1v1h-1zM44 28h1v1h-1zM4 29h1v1h-1zM5 29h1v1h-1zM6 29h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM14 29h1v1h-1zM16 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM26 29h1v1h-1zM29 29h1v1h-1zM31 29h1v1h-1zM35 29h1v1h-1zM36 29h1v1h-1zM37 29h1v1h-1zM38 29h1v1h-1zM43 29h1v1h-1zM44 29h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM23 30h1v1h-1zM28 30h1v1h-1zM32 30h1v1h-1zM33 30h1v1h-1zM35 30h1v1h-1zM38 30h1v1h-1zM40 30h1v1h-1zM41 30h1v1h-1zM42 30h1v1h-1zM44 30h1v1h-1zM5 31h1v1h-1zM9 31h1v1h-1zM11 31h1v1h-1zM12 31h1v1h-1zM15 31h1v1h-1zM17 31h1v1h-1zM22 31h1v1h-1zM25 31h1v1h-1zM28 31h1v1h-1zM33 31h1v1h-1zM34 31h1v1h-1zM35 31h1v1h-1zM38 31h1v1h-1zM40 31h1v1h-1zM41 31h1v1h-1zM44 31h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM21 32h1v1h-1zM22 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM26 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM31 32h1v1h-1zM33 32h1v1h-1zM34 32h1v1h-1zM35 32h1v1h-1zM36 32h1v1h-1zM37 32h1v1h-1zM40 32h1v1h-1zM41 32h1v1h-1zM42 32h1v1h-1zM5 33h1v1h-1zM6 33h1v1h-1zM9 33h1v1h-1zM11 33h1v1h-1zM15 33h1v1h-1zM16 33h1v1h-1zM17 33h1v1h-1zM21 33h1v1h-1zM23 33h1v1h-1zM24 33h1v1h-1zM26 33h1v1h-1zM36 33h1v1h-1zM41 33h1v1h-1zM42 33h1v1h-1zM4 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM9 34h1v1h-1zM10 34h1v1h-1zM11 34h1v1h-1zM12 34h1v1h-1zM15 34h1v1h-1zM16 34h1v1h-1zM17 34h1v1h-1zM23 34h1v1h-1zM26 34h1v1h-1zM30 34h1v1h-1zM33 34h1v1h-1zM34 34h1v1h-1zM36 34h1v1h-1zM39 34h1v1h-1zM40 34h1v1h-1zM6 35h1v1h-1zM7 35h1v1h-1zM8 35h1v1h-1zM9 35h1v1h-1zM13 35h1v1h-1zM16 35h1v1h-1zM18 35h1v1h-1zM19 35h1v1h-1zM21 35h1v1h-1zM23 35h1v1h-1zM27 35h1v1h-1zM30 35h1v1h-1zM31 35h1v1h-1zM32 35h1v1h-1zM33 35h1v1h-1zM34 35h1v1h-1zM36 35h1v1h-1zM38 35h1v1h-1zM39 35h1v1h-1zM42 35h1v1h-1zM44 35h1v1h-1zM5 36h1v1h-1zM7 36h1v1h-1zM9 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM13 36h1v1h-1zM14 36h1v1h-1zM15 36h1v1h-1zM20 36h1v1h-1zM22 36h1v1h-1zM24 36h1v1h-1zM25 36h1v1h-1zM26 36h1v1h-1zM28 36h1v1h-1zM31 36h1v1h-1zM34 36h1v1h-1zM36 36h1v1h-1zM37 36h1v1h-1zM38 36h1v1h-1zM39 36h1v1h-1zM40 36h1v1h-1zM42 36h1v1h-1zM44 36h1v1h-1zM12 37h1v1h-1zM17 37h1v1h-1zM20 37h1v1h-1zM21 37h1v1h-1zM23 37h1v1h-1zM25 37h1v1h-1zM26 37h1v1h-1zM27 37h1v1h-1zM28 37h1v1h-1zM29 37h1v1h-1zM30 37h1v1h-1zM34 37h1v1h-1zM36 37h1v1h-1zM40 37h1v1h-1zM41 37h1v1h-1zM44 37h1v1h-1zM4 38h1v1h-1zM5 38h1v1h-1zM6 38h1v1h-1zM7 38h1v1h-1zM8 38h1v1h-1zM9 38h1v1h-1zM10 38h1v1h-1zM12 38h1v1h-1zM16 38h1v1h-1zM20 38h1v1h-1zM22 38h1v1h-1zM24 38h1v1h-1zM27 38h1v1h-1zM29 38h1v1h-1zM33 38h1v1h-1zM36 38h1v1h-1zM38 38h1v1h-1zM40 38h1v1h-1zM41 38h1v1h-1zM4 39h1v1h-1zM10 39h1v1h-1zM12 39h1v1h-1zM15 39h1v1h-1zM16 39h1v1h-1zM18 39h1v1h-1zM21 39h1v1h-1zM34 39h1v1h-1zM36 39h1v1h-1zM40 39h1v1h-1zM44 39h1v1h-1zM4 40h1v1h-1zM6 40h1v1h-1zM7 40h1v1h-1zM8 40h1v1h-1zM10 40h1v1h-1zM13 40h1v1h-1zM18 40h1v1h-1zM19 40h1v1h-1zM20 40h1v1h-1zM23 40h1v1h-1zM25 40h1v1h-1zM28 40h1v1h-1zM30 40h1v1h-1zM31 40h1v1h-1zM32 40h1v1h-1zM34 40h1v1h-1zM36 40h1v1h-1zM37 40h1v1h-1zM38 40h1v1h-1zM39 40h1v1h-1zM40 40h1v1h-1zM41 40h1v1h-1zM42 40h1v1h-1zM43 40h1v1h-1zM4 41h1v1h-1zM6 41h1v1h-1zM7 41h1v1h-1zM8 41h1v1h-1zM10 41h1v1h-1zM12 41h1v1h-1zM13 41h1v1h-1zM14 41h1v1h-1zM15 41h1v1h-1zM18 41h1v1h-1zM20 41h1v1h-1zM21 41h1v1h-1zM26 41h1v1h-1zM28 41h1v1h-1zM29 41h1v1h-1zM30 41h1v1h-1zM31 41h1v1h-1zM33 41h1v1h-1zM34 41h1v1h-1zM36 41h1v1h-1zM41 41h1v1h-1zM43 41h1v1h-1zM4 42h1v1h-1zM6 42h1v1h-1zM7 42h1v1h-1zM8 42h1v1h-1zM10 42h1v1h-1zM12 42h1v1h-1zM13 42h1v1h-1zM15 42h1v1h-1zM18 42h1v1h-1zM20 42h1v1h-1zM22 42h1v1h-1zM24 42h1v1h-1zM26 42h1v1h-1zM28 42h1v1h-1zM31 42h1v1h-1zM33 42h1v1h-1zM36 42h1v1h-1zM37 42h1v1h-1zM39 42h1v1h-1zM42 42h1v1h-1zM43 42h1v1h-1zM44 42h1v1h-1zM4 43h1v1h-1zM10 43h1v1h-1zM14 43h1v1h-1zM15 43h1v1h-1zM19 43h1v1h-1zM21 43h1v1h-1zM22 43h1v1h-1zM25 43h1v1h-1zM27 43h1v1h-1zM28 43h1v1h-1zM31 43h1v1h-1zM32 43h1v1h-1zM35 43h1v1h-1zM36 43h1v1h-1zM40 43h1v1h-1zM41 43h1v1h-1zM43 43h1v1h-1zM4 44h1v1h-1zM5 44h1v1h-1zM6 44h1v1h-1zM7 44h1v1h-1zM8 44h1v1h-1zM9 44h1v1h-1zM10 44h1v1h-1zM12 44h1v1h-1zM14 44h1v1h-1zM15 44h1v1h-1zM17 44h1v1h-1zM18 44h1v1h-1zM19 44h1v1h-1zM23 44h1v1h-1zM25 44h1v1h-1zM28 44h1v1h-1zM29 44h1v1h-1zM30 44h1v1h-1zM32 44h1v1h-1zM36 44h1v1h-1zM39 44h1v1h-1zM43 44h1v1h-1z"/></svg></div><div class="coffee-qrv" data-a="500"><svg role="img" aria-label="IPS QR kod 500 RSD" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 49" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM36 4h1v1h-1zM38 4h1v1h-1zM39 4h1v1h-1zM40 4h1v1h-1zM41 4h1v1h-1zM42 4h1v1h-1zM43 4h1v1h-1zM44 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM33 5h1v1h-1zM36 5h1v1h-1zM38 5h1v1h-1zM44 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM23 6h1v1h-1zM28 6h1v1h-1zM32 6h1v1h-1zM34 6h1v1h-1zM38 6h1v1h-1zM40 6h1v1h-1zM41 6h1v1h-1zM42 6h1v1h-1zM44 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM23 7h1v1h-1zM25 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM31 7h1v1h-1zM34 7h1v1h-1zM35 7h1v1h-1zM38 7h1v1h-1zM40 7h1v1h-1zM41 7h1v1h-1zM42 7h1v1h-1zM44 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM13 8h1v1h-1zM19 8h1v1h-1zM21 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM33 8h1v1h-1zM38 8h1v1h-1zM40 8h1v1h-1zM41 8h1v1h-1zM42 8h1v1h-1zM44 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM24 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM35 9h1v1h-1zM38 9h1v1h-1zM44 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM39 10h1v1h-1zM40 10h1v1h-1zM41 10h1v1h-1zM42 10h1v1h-1zM43 10h1v1h-1zM44 10h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM14 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM23 11h1v1h-1zM26 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM32 11h1v1h-1zM33 11h1v1h-1zM34 11h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM30 12h1v1h-1zM33 12h1v1h-1zM34 12h1v1h-1zM36 12h1v1h-1zM38 12h1v1h-1zM41 12h1v1h-1zM43 12h1v1h-1zM44 12h1v1h-1zM4 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM29 13h1v1h-1zM30 13h1v1h-1zM32 13h1v1h-1zM33 13h1v1h-1zM35 13h1v1h-1zM37 13h1v1h-1zM38 13h1v1h-1zM39 13h1v1h-1zM40 13h1v1h-1zM42 13h1v1h-1zM43 13h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM32 14h1v1h-1zM34 14h1v1h-1zM36 14h1v1h-1zM41 14h1v1h-1zM43 14h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM6 15h1v1h-1zM8 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM29 15h1v1h-1zM32 15h1v1h-1zM35 15h1v1h-1zM37 15h1v1h-1zM38 15h1v1h-1zM41 15h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM31 16h1v1h-1zM32 16h1v1h-1zM33 16h1v1h-1zM34 16h1v1h-1zM39 16h1v1h-1zM41 16h1v1h-1zM42 16h1v1h-1zM43 16h1v1h-1zM44 16h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM24 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM33 17h1v1h-1zM34 17h1v1h-1zM35 17h1v1h-1zM38 17h1v1h-1zM39 17h1v1h-1zM41 17h1v1h-1zM42 17h1v1h-1zM44 17h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM7 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM33 18h1v1h-1zM35 18h1v1h-1zM37 18h1v1h-1zM41 18h1v1h-1zM42 18h1v1h-1zM43 18h1v1h-1zM44 18h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM31 19h1v1h-1zM34 19h1v1h-1zM35 19h1v1h-1zM37 19h1v1h-1zM40 19h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM22 20h1v1h-1zM26 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM33 20h1v1h-1zM34 20h1v1h-1zM35 20h1v1h-1zM37 20h1v1h-1zM40 20h1v1h-1zM41 20h1v1h-1zM43 20h1v1h-1zM5 21h1v1h-1zM8 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM15 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM22 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM31 21h1v1h-1zM32 21h1v1h-1zM33 21h1v1h-1zM34 21h1v1h-1zM37 21h1v1h-1zM38 21h1v1h-1zM39 21h1v1h-1zM42 21h1v1h-1zM43 21h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM22 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM33 22h1v1h-1zM36 22h1v1h-1zM37 22h1v1h-1zM41 22h1v1h-1zM42 22h1v1h-1zM43 22h1v1h-1zM4 23h1v1h-1zM6 23h1v1h-1zM7 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM15 23h1v1h-1zM16 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM32 23h1v1h-1zM36 23h1v1h-1zM37 23h1v1h-1zM39 23h1v1h-1zM41 23h1v1h-1zM42 23h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM7 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM23 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM34 24h1v1h-1zM36 24h1v1h-1zM38 24h1v1h-1zM40 24h1v1h-1zM41 24h1v1h-1zM42 24h1v1h-1zM44 24h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM7 25h1v1h-1zM8 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM35 25h1v1h-1zM36 25h1v1h-1zM38 25h1v1h-1zM39 25h1v1h-1zM40 25h1v1h-1zM41 25h1v1h-1zM43 25h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM32 26h1v1h-1zM33 26h1v1h-1zM34 26h1v1h-1zM37 26h1v1h-1zM39 26h1v1h-1zM40 26h1v1h-1zM42 26h1v1h-1zM43 26h1v1h-1zM7 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM27 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM38 27h1v1h-1zM39 27h1v1h-1zM40 27h1v1h-1zM43 27h1v1h-1zM44 27h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM12 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM27 28h1v1h-1zM29 28h1v1h-1zM32 28h1v1h-1zM36 28h1v1h-1zM42 28h1v1h-1zM43 28h1v1h-1zM44 28h1v1h-1zM4 29h1v1h-1zM5 29h1v1h-1zM6 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM14 29h1v1h-1zM16 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM26 29h1v1h-1zM29 29h1v1h-1zM31 29h1v1h-1zM35 29h1v1h-1zM36 29h1v1h-1zM37 29h1v1h-1zM38 29h1v1h-1zM43 29h1v1h-1zM44 29h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM13 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM23 30h1v1h-1zM28 30h1v1h-1zM32 30h1v1h-1zM33 30h1v1h-1zM35 30h1v1h-1zM38 30h1v1h-1zM40 30h1v1h-1zM41 30h1v1h-1zM42 30h1v1h-1zM44 30h1v1h-1zM5 31h1v1h-1zM6 31h1v1h-1zM7 31h1v1h-1zM9 31h1v1h-1zM11 31h1v1h-1zM12 31h1v1h-1zM15 31h1v1h-1zM17 31h1v1h-1zM22 31h1v1h-1zM25 31h1v1h-1zM28 31h1v1h-1zM33 31h1v1h-1zM34 31h1v1h-1zM35 31h1v1h-1zM38 31h1v1h-1zM40 31h1v1h-1zM41 31h1v1h-1zM44 31h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM21 32h1v1h-1zM22 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM26 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM31 32h1v1h-1zM33 32h1v1h-1zM34 32h1v1h-1zM35 32h1v1h-1zM36 32h1v1h-1zM37 32h1v1h-1zM40 32h1v1h-1zM41 32h1v1h-1zM42 32h1v1h-1zM5 33h1v1h-1zM6 33h1v1h-1zM9 33h1v1h-1zM11 33h1v1h-1zM15 33h1v1h-1zM16 33h1v1h-1zM17 33h1v1h-1zM21 33h1v1h-1zM23 33h1v1h-1zM24 33h1v1h-1zM26 33h1v1h-1zM36 33h1v1h-1zM41 33h1v1h-1zM42 33h1v1h-1zM4 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM9 34h1v1h-1zM10 34h1v1h-1zM11 34h1v1h-1zM12 34h1v1h-1zM13 34h1v1h-1zM14 34h1v1h-1zM15 34h1v1h-1zM16 34h1v1h-1zM18 34h1v1h-1zM23 34h1v1h-1zM26 34h1v1h-1zM30 34h1v1h-1zM33 34h1v1h-1zM34 34h1v1h-1zM36 34h1v1h-1zM39 34h1v1h-1zM40 34h1v1h-1zM6 35h1v1h-1zM7 35h1v1h-1zM8 35h1v1h-1zM9 35h1v1h-1zM13 35h1v1h-1zM16 35h1v1h-1zM18 35h1v1h-1zM19 35h1v1h-1zM21 35h1v1h-1zM23 35h1v1h-1zM27 35h1v1h-1zM30 35h1v1h-1zM31 35h1v1h-1zM32 35h1v1h-1zM33 35h1v1h-1zM34 35h1v1h-1zM36 35h1v1h-1zM38 35h1v1h-1zM39 35h1v1h-1zM42 35h1v1h-1zM44 35h1v1h-1zM5 36h1v1h-1zM7 36h1v1h-1zM9 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM15 36h1v1h-1zM17 36h1v1h-1zM18 36h1v1h-1zM20 36h1v1h-1zM22 36h1v1h-1zM24 36h1v1h-1zM25 36h1v1h-1zM26 36h1v1h-1zM28 36h1v1h-1zM31 36h1v1h-1zM34 36h1v1h-1zM36 36h1v1h-1zM37 36h1v1h-1zM38 36h1v1h-1zM39 36h1v1h-1zM40 36h1v1h-1zM42 36h1v1h-1zM44 36h1v1h-1zM12 37h1v1h-1zM16 37h1v1h-1zM17 37h1v1h-1zM18 37h1v1h-1zM20 37h1v1h-1zM21 37h1v1h-1zM23 37h1v1h-1zM25 37h1v1h-1zM26 37h1v1h-1zM27 37h1v1h-1zM28 37h1v1h-1zM29 37h1v1h-1zM30 37h1v1h-1zM34 37h1v1h-1zM36 37h1v1h-1zM40 37h1v1h-1zM41 37h1v1h-1zM44 37h1v1h-1zM4 38h1v1h-1zM5 38h1v1h-1zM6 38h1v1h-1zM7 38h1v1h-1zM8 38h1v1h-1zM9 38h1v1h-1zM10 38h1v1h-1zM12 38h1v1h-1zM15 38h1v1h-1zM20 38h1v1h-1zM22 38h1v1h-1zM24 38h1v1h-1zM27 38h1v1h-1zM29 38h1v1h-1zM33 38h1v1h-1zM36 38h1v1h-1zM38 38h1v1h-1zM40 38h1v1h-1zM41 38h1v1h-1zM4 39h1v1h-1zM10 39h1v1h-1zM12 39h1v1h-1zM18 39h1v1h-1zM20 39h1v1h-1zM21 39h1v1h-1zM34 39h1v1h-1zM36 39h1v1h-1zM40 39h1v1h-1zM44 39h1v1h-1zM4 40h1v1h-1zM6 40h1v1h-1zM7 40h1v1h-1zM8 40h1v1h-1zM10 40h1v1h-1zM13 40h1v1h-1zM18 40h1v1h-1zM20 40h1v1h-1zM23 40h1v1h-1zM25 40h1v1h-1zM28 40h1v1h-1zM30 40h1v1h-1zM31 40h1v1h-1zM32 40h1v1h-1zM34 40h1v1h-1zM36 40h1v1h-1zM37 40h1v1h-1zM38 40h1v1h-1zM39 40h1v1h-1zM40 40h1v1h-1zM41 40h1v1h-1zM42 40h1v1h-1zM43 40h1v1h-1zM4 41h1v1h-1zM6 41h1v1h-1zM7 41h1v1h-1zM8 41h1v1h-1zM10 41h1v1h-1zM12 41h1v1h-1zM13 41h1v1h-1zM14 41h1v1h-1zM15 41h1v1h-1zM18 41h1v1h-1zM20 41h1v1h-1zM21 41h1v1h-1zM26 41h1v1h-1zM28 41h1v1h-1zM29 41h1v1h-1zM30 41h1v1h-1zM31 41h1v1h-1zM33 41h1v1h-1zM34 41h1v1h-1zM36 41h1v1h-1zM41 41h1v1h-1zM43 41h1v1h-1zM4 42h1v1h-1zM6 42h1v1h-1zM7 42h1v1h-1zM8 42h1v1h-1zM10 42h1v1h-1zM12 42h1v1h-1zM13 42h1v1h-1zM15 42h1v1h-1zM18 42h1v1h-1zM20 42h1v1h-1zM22 42h1v1h-1zM24 42h1v1h-1zM26 42h1v1h-1zM28 42h1v1h-1zM31 42h1v1h-1zM33 42h1v1h-1zM36 42h1v1h-1zM37 42h1v1h-1zM39 42h1v1h-1zM42 42h1v1h-1zM43 42h1v1h-1zM44 42h1v1h-1zM4 43h1v1h-1zM10 43h1v1h-1zM14 43h1v1h-1zM15 43h1v1h-1zM19 43h1v1h-1zM21 43h1v1h-1zM22 43h1v1h-1zM25 43h1v1h-1zM27 43h1v1h-1zM28 43h1v1h-1zM31 43h1v1h-1zM32 43h1v1h-1zM35 43h1v1h-1zM36 43h1v1h-1zM40 43h1v1h-1zM41 43h1v1h-1zM43 43h1v1h-1zM4 44h1v1h-1zM5 44h1v1h-1zM6 44h1v1h-1zM7 44h1v1h-1zM8 44h1v1h-1zM9 44h1v1h-1zM10 44h1v1h-1zM12 44h1v1h-1zM14 44h1v1h-1zM15 44h1v1h-1zM17 44h1v1h-1zM18 44h1v1h-1zM19 44h1v1h-1zM23 44h1v1h-1zM25 44h1v1h-1zM28 44h1v1h-1zM29 44h1v1h-1zM30 44h1v1h-1zM32 44h1v1h-1zM36 44h1v1h-1zM39 44h1v1h-1zM43 44h1v1h-1z"/></svg></div><div class="coffee-qrv" data-a="1000" hidden><svg role="img" aria-label="IPS QR kod 1000 RSD" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 49" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM21 4h1v1h-1zM24 4h1v1h-1zM29 4h1v1h-1zM32 4h1v1h-1zM35 4h1v1h-1zM38 4h1v1h-1zM39 4h1v1h-1zM40 4h1v1h-1zM41 4h1v1h-1zM42 4h1v1h-1zM43 4h1v1h-1zM44 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM25 5h1v1h-1zM26 5h1v1h-1zM28 5h1v1h-1zM33 5h1v1h-1zM34 5h1v1h-1zM38 5h1v1h-1zM44 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM14 6h1v1h-1zM15 6h1v1h-1zM17 6h1v1h-1zM19 6h1v1h-1zM23 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM34 6h1v1h-1zM35 6h1v1h-1zM38 6h1v1h-1zM40 6h1v1h-1zM41 6h1v1h-1zM42 6h1v1h-1zM44 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM32 7h1v1h-1zM33 7h1v1h-1zM35 7h1v1h-1zM36 7h1v1h-1zM38 7h1v1h-1zM40 7h1v1h-1zM41 7h1v1h-1zM42 7h1v1h-1zM44 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM13 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM25 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM32 8h1v1h-1zM34 8h1v1h-1zM36 8h1v1h-1zM38 8h1v1h-1zM40 8h1v1h-1zM41 8h1v1h-1zM42 8h1v1h-1zM44 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM22 9h1v1h-1zM24 9h1v1h-1zM26 9h1v1h-1zM28 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM34 9h1v1h-1zM38 9h1v1h-1zM44 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM39 10h1v1h-1zM40 10h1v1h-1zM41 10h1v1h-1zM42 10h1v1h-1zM43 10h1v1h-1zM44 10h1v1h-1zM12 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM19 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM26 11h1v1h-1zM28 11h1v1h-1zM32 11h1v1h-1zM36 11h1v1h-1zM4 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM13 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM24 12h1v1h-1zM30 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM33 12h1v1h-1zM35 12h1v1h-1zM36 12h1v1h-1zM37 12h1v1h-1zM38 12h1v1h-1zM41 12h1v1h-1zM42 12h1v1h-1zM43 12h1v1h-1zM6 13h1v1h-1zM7 13h1v1h-1zM9 13h1v1h-1zM11 13h1v1h-1zM14 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM33 13h1v1h-1zM35 13h1v1h-1zM36 13h1v1h-1zM39 13h1v1h-1zM40 13h1v1h-1zM43 13h1v1h-1zM7 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM25 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM32 14h1v1h-1zM33 14h1v1h-1zM38 14h1v1h-1zM39 14h1v1h-1zM40 14h1v1h-1zM41 14h1v1h-1zM42 14h1v1h-1zM43 14h1v1h-1zM4 15h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM15 15h1v1h-1zM16 15h1v1h-1zM18 15h1v1h-1zM26 15h1v1h-1zM28 15h1v1h-1zM34 15h1v1h-1zM38 15h1v1h-1zM40 15h1v1h-1zM43 15h1v1h-1zM44 15h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM15 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM27 16h1v1h-1zM31 16h1v1h-1zM32 16h1v1h-1zM34 16h1v1h-1zM35 16h1v1h-1zM36 16h1v1h-1zM38 16h1v1h-1zM43 16h1v1h-1zM44 16h1v1h-1zM5 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM15 17h1v1h-1zM17 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM24 17h1v1h-1zM25 17h1v1h-1zM28 17h1v1h-1zM32 17h1v1h-1zM35 17h1v1h-1zM36 17h1v1h-1zM38 17h1v1h-1zM40 17h1v1h-1zM41 17h1v1h-1zM44 17h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM22 18h1v1h-1zM23 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM33 18h1v1h-1zM34 18h1v1h-1zM36 18h1v1h-1zM38 18h1v1h-1zM40 18h1v1h-1zM42 18h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM6 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM30 19h1v1h-1zM31 19h1v1h-1zM34 19h1v1h-1zM36 19h1v1h-1zM38 19h1v1h-1zM40 19h1v1h-1zM42 19h1v1h-1zM43 19h1v1h-1zM44 19h1v1h-1zM4 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM26 20h1v1h-1zM29 20h1v1h-1zM32 20h1v1h-1zM35 20h1v1h-1zM36 20h1v1h-1zM39 20h1v1h-1zM41 20h1v1h-1zM42 20h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM6 21h1v1h-1zM7 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM13 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM30 21h1v1h-1zM31 21h1v1h-1zM35 21h1v1h-1zM37 21h1v1h-1zM39 21h1v1h-1zM40 21h1v1h-1zM41 21h1v1h-1zM42 21h1v1h-1zM43 21h1v1h-1zM44 21h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM33 22h1v1h-1zM34 22h1v1h-1zM35 22h1v1h-1zM37 22h1v1h-1zM38 22h1v1h-1zM39 22h1v1h-1zM43 22h1v1h-1zM44 22h1v1h-1zM8 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM37 23h1v1h-1zM40 23h1v1h-1zM41 23h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM23 24h1v1h-1zM25 24h1v1h-1zM28 24h1v1h-1zM30 24h1v1h-1zM31 24h1v1h-1zM34 24h1v1h-1zM35 24h1v1h-1zM36 24h1v1h-1zM37 24h1v1h-1zM42 24h1v1h-1zM43 24h1v1h-1zM4 25h1v1h-1zM7 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM31 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM35 25h1v1h-1zM37 25h1v1h-1zM39 25h1v1h-1zM40 25h1v1h-1zM44 25h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM25 26h1v1h-1zM29 26h1v1h-1zM31 26h1v1h-1zM32 26h1v1h-1zM36 26h1v1h-1zM39 26h1v1h-1zM42 26h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM6 27h1v1h-1zM7 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM11 27h1v1h-1zM13 27h1v1h-1zM15 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM27 27h1v1h-1zM32 27h1v1h-1zM34 27h1v1h-1zM35 27h1v1h-1zM39 27h1v1h-1zM41 27h1v1h-1zM44 27h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM7 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM26 28h1v1h-1zM30 28h1v1h-1zM33 28h1v1h-1zM35 28h1v1h-1zM38 28h1v1h-1zM39 28h1v1h-1zM41 28h1v1h-1zM42 28h1v1h-1zM43 28h1v1h-1zM4 29h1v1h-1zM5 29h1v1h-1zM8 29h1v1h-1zM11 29h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM16 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM23 29h1v1h-1zM25 29h1v1h-1zM26 29h1v1h-1zM27 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM31 29h1v1h-1zM33 29h1v1h-1zM34 29h1v1h-1zM35 29h1v1h-1zM37 29h1v1h-1zM38 29h1v1h-1zM39 29h1v1h-1zM40 29h1v1h-1zM42 29h1v1h-1zM43 29h1v1h-1zM4 30h1v1h-1zM5 30h1v1h-1zM8 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM16 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM21 30h1v1h-1zM22 30h1v1h-1zM25 30h1v1h-1zM26 30h1v1h-1zM29 30h1v1h-1zM31 30h1v1h-1zM33 30h1v1h-1zM34 30h1v1h-1zM37 30h1v1h-1zM42 30h1v1h-1zM6 31h1v1h-1zM7 31h1v1h-1zM11 31h1v1h-1zM12 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM19 31h1v1h-1zM22 31h1v1h-1zM24 31h1v1h-1zM26 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM33 31h1v1h-1zM34 31h1v1h-1zM35 31h1v1h-1zM36 31h1v1h-1zM37 31h1v1h-1zM38 31h1v1h-1zM40 31h1v1h-1zM41 31h1v1h-1zM42 31h1v1h-1zM44 31h1v1h-1zM7 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM12 32h1v1h-1zM14 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM19 32h1v1h-1zM24 32h1v1h-1zM26 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM30 32h1v1h-1zM32 32h1v1h-1zM35 32h1v1h-1zM39 32h1v1h-1zM41 32h1v1h-1zM44 32h1v1h-1zM4 33h1v1h-1zM6 33h1v1h-1zM8 33h1v1h-1zM14 33h1v1h-1zM15 33h1v1h-1zM17 33h1v1h-1zM20 33h1v1h-1zM21 33h1v1h-1zM22 33h1v1h-1zM34 33h1v1h-1zM35 33h1v1h-1zM36 33h1v1h-1zM38 33h1v1h-1zM40 33h1v1h-1zM42 33h1v1h-1zM44 33h1v1h-1zM4 34h1v1h-1zM5 34h1v1h-1zM7 34h1v1h-1zM10 34h1v1h-1zM13 34h1v1h-1zM14 34h1v1h-1zM15 34h1v1h-1zM19 34h1v1h-1zM20 34h1v1h-1zM21 34h1v1h-1zM22 34h1v1h-1zM23 34h1v1h-1zM26 34h1v1h-1zM28 34h1v1h-1zM29 34h1v1h-1zM30 34h1v1h-1zM31 34h1v1h-1zM34 34h1v1h-1zM35 34h1v1h-1zM38 34h1v1h-1zM40 34h1v1h-1zM41 34h1v1h-1zM42 34h1v1h-1zM44 34h1v1h-1zM4 35h1v1h-1zM7 35h1v1h-1zM9 35h1v1h-1zM12 35h1v1h-1zM16 35h1v1h-1zM18 35h1v1h-1zM19 35h1v1h-1zM20 35h1v1h-1zM26 35h1v1h-1zM27 35h1v1h-1zM35 35h1v1h-1zM38 35h1v1h-1zM40 35h1v1h-1zM44 35h1v1h-1zM4 36h1v1h-1zM7 36h1v1h-1zM8 36h1v1h-1zM10 36h1v1h-1zM11 36h1v1h-1zM15 36h1v1h-1zM18 36h1v1h-1zM21 36h1v1h-1zM24 36h1v1h-1zM25 36h1v1h-1zM26 36h1v1h-1zM27 36h1v1h-1zM29 36h1v1h-1zM31 36h1v1h-1zM32 36h1v1h-1zM36 36h1v1h-1zM37 36h1v1h-1zM38 36h1v1h-1zM39 36h1v1h-1zM40 36h1v1h-1zM41 36h1v1h-1zM42 36h1v1h-1zM43 36h1v1h-1zM12 37h1v1h-1zM16 37h1v1h-1zM17 37h1v1h-1zM18 37h1v1h-1zM19 37h1v1h-1zM23 37h1v1h-1zM24 37h1v1h-1zM25 37h1v1h-1zM26 37h1v1h-1zM27 37h1v1h-1zM28 37h1v1h-1zM30 37h1v1h-1zM31 37h1v1h-1zM32 37h1v1h-1zM33 37h1v1h-1zM34 37h1v1h-1zM36 37h1v1h-1zM40 37h1v1h-1zM41 37h1v1h-1zM42 37h1v1h-1zM43 37h1v1h-1zM4 38h1v1h-1zM5 38h1v1h-1zM6 38h1v1h-1zM7 38h1v1h-1zM8 38h1v1h-1zM9 38h1v1h-1zM10 38h1v1h-1zM14 38h1v1h-1zM22 38h1v1h-1zM26 38h1v1h-1zM28 38h1v1h-1zM31 38h1v1h-1zM33 38h1v1h-1zM36 38h1v1h-1zM38 38h1v1h-1zM40 38h1v1h-1zM41 38h1v1h-1zM42 38h1v1h-1zM43 38h1v1h-1zM4 39h1v1h-1zM10 39h1v1h-1zM13 39h1v1h-1zM15 39h1v1h-1zM18 39h1v1h-1zM20 39h1v1h-1zM23 39h1v1h-1zM24 39h1v1h-1zM25 39h1v1h-1zM30 39h1v1h-1zM32 39h1v1h-1zM33 39h1v1h-1zM34 39h1v1h-1zM35 39h1v1h-1zM36 39h1v1h-1zM40 39h1v1h-1zM41 39h1v1h-1zM4 40h1v1h-1zM6 40h1v1h-1zM7 40h1v1h-1zM8 40h1v1h-1zM10 40h1v1h-1zM13 40h1v1h-1zM15 40h1v1h-1zM17 40h1v1h-1zM21 40h1v1h-1zM22 40h1v1h-1zM23 40h1v1h-1zM24 40h1v1h-1zM25 40h1v1h-1zM28 40h1v1h-1zM29 40h1v1h-1zM30 40h1v1h-1zM31 40h1v1h-1zM33 40h1v1h-1zM35 40h1v1h-1zM36 40h1v1h-1zM37 40h1v1h-1zM38 40h1v1h-1zM39 40h1v1h-1zM40 40h1v1h-1zM43 40h1v1h-1zM44 40h1v1h-1zM4 41h1v1h-1zM6 41h1v1h-1zM7 41h1v1h-1zM8 41h1v1h-1zM10 41h1v1h-1zM14 41h1v1h-1zM16 41h1v1h-1zM20 41h1v1h-1zM21 41h1v1h-1zM24 41h1v1h-1zM27 41h1v1h-1zM29 41h1v1h-1zM30 41h1v1h-1zM31 41h1v1h-1zM34 41h1v1h-1zM39 41h1v1h-1zM40 41h1v1h-1zM41 41h1v1h-1zM43 41h1v1h-1zM4 42h1v1h-1zM6 42h1v1h-1zM7 42h1v1h-1zM8 42h1v1h-1zM10 42h1v1h-1zM13 42h1v1h-1zM14 42h1v1h-1zM15 42h1v1h-1zM16 42h1v1h-1zM17 42h1v1h-1zM18 42h1v1h-1zM19 42h1v1h-1zM22 42h1v1h-1zM23 42h1v1h-1zM24 42h1v1h-1zM25 42h1v1h-1zM29 42h1v1h-1zM32 42h1v1h-1zM33 42h1v1h-1zM34 42h1v1h-1zM35 42h1v1h-1zM36 42h1v1h-1zM38 42h1v1h-1zM39 42h1v1h-1zM40 42h1v1h-1zM4 43h1v1h-1zM10 43h1v1h-1zM14 43h1v1h-1zM15 43h1v1h-1zM17 43h1v1h-1zM18 43h1v1h-1zM20 43h1v1h-1zM21 43h1v1h-1zM22 43h1v1h-1zM24 43h1v1h-1zM26 43h1v1h-1zM27 43h1v1h-1zM28 43h1v1h-1zM30 43h1v1h-1zM35 43h1v1h-1zM37 43h1v1h-1zM38 43h1v1h-1zM40 43h1v1h-1zM41 43h1v1h-1zM42 43h1v1h-1zM44 43h1v1h-1zM4 44h1v1h-1zM5 44h1v1h-1zM6 44h1v1h-1zM7 44h1v1h-1zM8 44h1v1h-1zM9 44h1v1h-1zM10 44h1v1h-1zM12 44h1v1h-1zM14 44h1v1h-1zM17 44h1v1h-1zM20 44h1v1h-1zM23 44h1v1h-1zM24 44h1v1h-1zM27 44h1v1h-1zM29 44h1v1h-1zM31 44h1v1h-1zM32 44h1v1h-1zM33 44h1v1h-1zM34 44h1v1h-1zM37 44h1v1h-1zM40 44h1v1h-1zM42 44h1v1h-1z"/></svg></div></div><p class="small muted">Izaberi iznos, pa u mobilnoj banci odaberi „IPS skeniraj“ i skeniraj QR kod</p><p>Hvala!</p></div></div>
+<script>(function(){var o=document.getElementById('coffeeOv');function c(){o.classList.remove('open')}window.coffeeOpen=function(){o.classList.add('open')};document.getElementById('coffeeX').onclick=c;o.addEventListener('click',function(e){if(e.target===o)c()});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});Array.prototype.forEach.call(document.querySelectorAll('.coffee-amts button'),function(b){b.onclick=function(){var a=b.getAttribute('data-a');Array.prototype.forEach.call(document.querySelectorAll('.coffee-amts button'),function(x){x.classList.toggle('on',x===b)});Array.prototype.forEach.call(document.querySelectorAll('.coffee-qrv'),function(v){v.hidden=v.getAttribute('data-a')!==a})}});document.getElementById('coffeeCopy').onclick=function(){var t='115000000006810143',x=this;function ok(){x.textContent='Kopirano \u2713';setTimeout(function(){x.textContent='Kopiraj broj računa'},1800)}try{navigator.clipboard.writeText(t).then(ok,function(){})}catch(e){}}})();</script>
+</body>
+</html>
